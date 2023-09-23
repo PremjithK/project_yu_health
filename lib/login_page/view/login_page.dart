@@ -38,30 +38,35 @@ class LoginPage extends StatelessWidget {
                     key: _formKey,
                     child: Column(
                       children: [
-                        MainHeading(
+                        const MainHeading(
                           text: 'Login to Yu',
-                          weight: FontWeight.w800,
+                          weight: FontWeight.w700,
                           letterSpacing: -1,
                         ),
-                        heightspace(30),
+                        heightspace(60),
                         MyTextFormField(
                           controller: _emailController,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return 'Invalid Email';
                             }
+                            return null;
                           },
                           keyboardType: TextInputType.emailAddress,
                           prefixIcon: const Icon(Icons.mail),
-                          hint: 'Please enter an email',
+                          hint: 'Email',
                         ),
                         heightspace(10),
                         MyTextFormField(
+                          onChanged: (value) {
+                            print(value);
+                          },
                           controller: _passwordController,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return 'Please enter your password';
                             }
+                            return null;
                           },
                           keyboardType: TextInputType.visiblePassword,
                           prefixIcon: const Icon(Icons.lock),
@@ -75,7 +80,7 @@ class LoginPage extends StatelessWidget {
                             Get.to(UserDashboardPage());
                           },
                         ),
-                        heightspace(5),
+                        heightspace(20),
                         //primaryButton('LOGIN', (), context),
                         MyPrimaryButton(
                           label: 'Log In',
@@ -85,7 +90,7 @@ class LoginPage extends StatelessWidget {
                             }
                           },
                         ),
-                        heightspace(10),
+                        heightspace(5),
                         MySecondaryButton(
                           label: 'Create an account',
                           onPressed: () {

@@ -1,5 +1,5 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 class ImageBannerCard extends StatelessWidget {
@@ -30,9 +30,8 @@ class ImageBannerCard extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: theme.colorScheme.onBackground.withOpacity(0.1),
-              blurRadius: 4,
-              offset: const Offset(1, 1),
+              color: theme.colorScheme.onBackground.withOpacity(0.2),
+              blurRadius: 5,
             ),
           ],
           borderRadius: BorderRadius.circular(15),
@@ -63,7 +62,8 @@ class ImageBannerCard extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: Container(
-                  padding: const EdgeInsets.all(10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: theme.colorScheme.primary,
@@ -78,9 +78,9 @@ class ImageBannerCard extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 21,
                           fontFamily: primaryFont,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w700,
                           color: theme.colorScheme.onPrimary.withOpacity(0.9),
-                          letterSpacing: -1,
+                          letterSpacing: 0,
                           height: 0.7,
                         ),
                       ),
@@ -92,7 +92,7 @@ class ImageBannerCard extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           color: theme.colorScheme.onPrimary.withOpacity(0.5),
                           height: 1,
-                          letterSpacing: -0.5,
+                          letterSpacing: 0,
                         ),
                       ),
                     ],

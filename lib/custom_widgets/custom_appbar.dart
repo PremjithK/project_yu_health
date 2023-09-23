@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:yu_health/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 class YuAppBar extends StatelessWidget {
@@ -53,12 +54,7 @@ class YuAppBar extends StatelessWidget {
           ),
 
           //Profile Pic
-          CircleAvatar(
-            radius: 18,
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            foregroundColor: Colors.white,
-            child: const Icon(Icons.person),
-          )
+          ProfilePictureAvatar(),
         ],
       ),
     );

@@ -3,8 +3,8 @@ import 'package:yu_health/custom_widgets/theme.dart';
 
 // Common features
 String font = secondaryFont;
-double fontSize = 16;
-double elevatedButtonPadding = 15;
+double fontSize = 15;
+double elevatedButtonPadding = 12;
 double elev = 0;
 double borderWidth = 1;
 double mainBorderRadius = 15;
@@ -40,7 +40,7 @@ class MyTextButton extends StatelessWidget {
         style: TextStyle(
           color: Theme.of(context).colorScheme.primary,
           fontFamily: secondaryFont,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w500,
           fontSize: 15,
         ),
       ),
@@ -72,13 +72,16 @@ class MyPrimaryButton extends StatelessWidget {
           foregroundColor: Theme.of(context).colorScheme.onPrimary,
           textStyle: TextStyle(
             fontFamily: font,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
             fontSize: fontSize,
           ),
           backgroundColor: Theme.of(context).colorScheme.primary,
           padding: EdgeInsets.all(elevatedButtonPadding),
           elevation: elev,
           shape: RoundedRectangleBorder(
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
             borderRadius: BorderRadius.circular(mainBorderRadius),
           ),
         ),
@@ -109,13 +112,13 @@ class MySecondaryButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          foregroundColor: Theme.of(context).colorScheme.primary,
+          foregroundColor: Theme.of(context).colorScheme.onBackground,
           textStyle: TextStyle(
             fontFamily: font,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
             fontSize: fontSize,
           ),
-          backgroundColor: Theme.of(context).colorScheme.onPrimary,
+          backgroundColor: Theme.of(context).colorScheme.background,
           padding: EdgeInsets.all(elevatedButtonPadding),
           elevation: elev,
           shape: RoundedRectangleBorder(

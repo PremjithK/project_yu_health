@@ -11,9 +11,8 @@ class _ProfilePictureAvatarState extends State<ProfilePictureAvatar> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
-
-    return // Avatar
-        Container(
+    //UI
+    return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(

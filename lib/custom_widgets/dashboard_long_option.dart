@@ -30,14 +30,13 @@ class DashboardLongOption extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: Ink(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
         width: deviceWidth,
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
               color: theme.colorScheme.onBackground.withOpacity(0.1),
               blurRadius: 4,
-              offset: const Offset(1, 1),
             )
           ],
           color: theme.colorScheme.primaryContainer,
@@ -54,7 +53,7 @@ class DashboardLongOption extends StatelessWidget {
               child: CircleAvatar(
                 backgroundColor:
                     theme.colorScheme.onPrimaryContainer.withOpacity(0.1),
-                radius: 26,
+                radius: 25,
                 foregroundColor: theme.colorScheme.primaryContainer,
                 child: icon,
               ),
@@ -82,7 +81,7 @@ class DashboardLongOption extends StatelessWidget {
                       fontFamily: secondaryFont,
                       color: theme.colorScheme.onPrimaryContainer
                           .withOpacity(0.75),
-                      fontSize: 13,
+                      fontSize: 12,
                       // fontWeight: FontWeight.w500,
                       height: 1,
                     ),

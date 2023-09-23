@@ -26,111 +26,125 @@ class SignupPage extends StatelessWidget {
 
     // UI
     return Scaffold(
+      // resizeToAvoidBottomInset: true,
       backgroundColor: theme.background,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SingleChildScrollView(
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Column(
-                      children: [
-                        MainHeading(
-                          text: 'Sign Up',
-                          weight: FontWeight.w800,
-                        ),
-                        heightspace(30),
-
-                        // Name Field
-                        MyTextFormField(
-                          controller: _nameController,
-                          prefixIcon: const Icon(Icons.person),
-                          hint: 'Full Name',
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return 'Name cannot be blank';
-                            } else {
-                              return null;
-                            }
-                          },
-                        ),
-                        heightspace(10),
-                        MyTextFormField(
-                          controller: _emailController,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return 'Invalid email';
-                            }
-                          },
-                          keyboardType: TextInputType.emailAddress,
-                          prefixIcon: const Icon(Icons.mail),
-                          hint: 'Email',
-                        ),
-                        heightspace(10),
-                        MyTextFormField(
-                          controller: _phoneController,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return 'Invalid Phone Number';
-                            }
-                          },
-                          keyboardType: TextInputType.phone,
-                          prefixIcon: const Icon(Icons.phone),
-                          hint: 'Phone Number',
-                        ),
-                        heightspace(10),
-                        MyTextFormField(
-                          controller: _passwordController,
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return 'Invalid Password';
-                            }
-                          },
-                          prefixIcon: const Icon(Icons.lock),
-                          isPassword: true,
-                          hint: 'Password',
-                        ),
-                        heightspace(10),
-
-                        //primaryButton('LOGIN', (), context),
-                        MyPrimaryButton(
-                          label: 'Create Account',
-                          onPressed: () {
-                            if (_formKey.currentState!.validate() == true) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text(
-                                    'All Fields Valid!',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  backgroundColor: Colors.green,
-                                ),
-                              );
-                            }
-                          },
-                        ),
-
-                        MyTextButton(
-                          label: 'Already have an account?',
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute<Widget>(
-                                builder: (context) => LoginPage(),
-                              ),
-                            );
-                          },
-                        ),
-                        heightspace(10),
-                      ],
+          Form(
+            key: _formKey,
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const MainHeading(
+                      text: 'Sign Up',
+                      weight: FontWeight.w700,
                     ),
-                  ),
-                ],
+                    heightspace(30),
+
+                    // Name Field
+                    MyTextFormField(
+                      enabled: false,
+                      controller: _nameController,
+                      prefixIcon: const Icon(Icons.person),
+                      hint: 'Full Name',
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Name cannot be blank';
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
+                    heightspace(10),
+                    MyTextFormField(
+                      controller: _emailController,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Invalid email';
+                        }
+                        return null;
+                      },
+                      keyboardType: TextInputType.emailAddress,
+                      prefixIcon: const Icon(Icons.mail),
+                      hint: 'Email',
+                    ),
+                    heightspace(10),
+                    MyTextFormField(
+                      controller: _phoneController,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Invalid Phone Number';
+                        }
+                        return null;
+                      },
+                      keyboardType: TextInputType.phone,
+                      prefixIcon: const Icon(Icons.phone),
+                      hint: 'Phone Number',
+                    ),
+                    heightspace(10),
+                    MyTextFormField(
+                      controller: _passwordController,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Invalid Password';
+                        }
+                        return null;
+                      },
+                      prefixIcon: const Icon(Icons.lock),
+                      isPassword: true,
+                      hint: 'Password',
+                    ),
+                    heightspace(10),
+                    MyTextFormField(
+                      controller: _passwordController,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Invalid Password';
+                        }
+                        return null;
+                      },
+                      prefixIcon: const Icon(Icons.lock_outline),
+                      isPassword: true,
+                      hint: 'Confirm Password',
+                    ),
+                    heightspace(10),
+
+                    //primaryButton('LOGIN', (), context),
+                    MyPrimaryButton(
+                      label: 'Create Account',
+                      onPressed: () {
+                        if (_formKey.currentState!.validate() == true) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                'All Fields Valid!',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              backgroundColor: Colors.green,
+                            ),
+                          );
+                        }
+                      },
+                    ),
+
+                    MyTextButton(
+                      label: 'Already have an account?',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<Widget>(
+                            builder: (context) => LoginPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    heightspace(10),
+                  ],
+                ),
               ),
             ),
           ),

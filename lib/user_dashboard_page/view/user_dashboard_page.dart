@@ -38,7 +38,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                heightspace(60),
+                heightspace(50),
                 // Header Section
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,14 +46,15 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        MainHeading(
+                        const MainHeading(
                           text: 'Yourname',
-                          size: 20,
+                          size: 18,
+                          weight: FontWeight.w500,
                         ),
                         MainHeading(
                           text: 'Dashboard',
                           color: theme.primary,
-                          size: 30,
+                          size: 25,
                           weight: FontWeight.bold,
                         ),
                       ],
@@ -80,6 +81,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                   icon: Icon(
                     FontAwesomeIcons.handshake,
                     color: theme.onPrimaryContainer,
+                    size: 21,
                   ),
                   color: theme.onBackground,
                 ),
@@ -91,6 +93,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                   icon: Icon(
                     FontAwesomeIcons.flask,
                     color: theme.onPrimaryContainer,
+                    size: 21,
                   ),
                   color: theme.onBackground,
                 ),

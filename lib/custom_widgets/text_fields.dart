@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
-const double fontSize = 16;
+const double fontSize = 15;
 const double borderRadius = 15;
-const double formTextFieldPadding = 12;
+const double textFormFieldHorizontalPadding = 15;
+//const double textFormFieldVerticalPadding = 12;
 
 class MyTextFormField extends StatefulWidget {
   const MyTextFormField({
@@ -15,11 +16,13 @@ class MyTextFormField extends StatefulWidget {
     this.isPassword = false,
     this.prefixIcon,
     this.keyboardType,
+    this.enabled = true,
     //Event Properties
     this.onChanged,
   });
 
   final String? hint;
+  final bool enabled;
   final FormFieldValidator<String>? validator;
   final TextEditingController? controller;
   final bool isPassword;
@@ -27,7 +30,7 @@ class MyTextFormField extends StatefulWidget {
   final TextInputType? keyboardType;
 
   //Event Functions Being Passed
-  final void Function()? onChanged;
+  final void Function(String)? onChanged;
 
   //
   @override
@@ -48,7 +51,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
       keyboardType: widget.keyboardType,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       //Events
-      onChanged: (value) => widget.onChanged,
+      onChanged: widget.onChanged,
 
       // INPUT TEXT STYLE
       style: TextStyle(
@@ -58,15 +61,25 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         letterSpacing: 0.5,
         color: Theme.of(context).colorScheme.onSurface,
       ),
+
       //Decoration
       decoration: InputDecoration(
+        enabled: widget.enabled,
+
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
+          borderSide: BorderSide(
+            color: theme.outline.withOpacity(0.4),
+            width: 2,
+          ),
+        ),
         //&ERROR MESSAGE STYLE
         errorStyle: TextStyle(
           color: Theme.of(context).colorScheme.error,
-          fontSize: 13,
+          fontSize: 12,
           fontFamily: secondaryFont,
           fontWeight: FontWeight.w500,
-          letterSpacing: 0.5,
+          letterSpacing: 0,
         ),
         filled: true,
         fillColor: theme.surface,
@@ -83,9 +96,11 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
             color: theme.primary,
           ),
         ),
+        // LABEL STYLES
         // HINT STYLES
-        hintText: widget.hint,
-        hintStyle: TextStyle(
+        labelText: widget.hint,
+        floatingLabelStyle: const TextStyle(fontSize: 16),
+        labelStyle: TextStyle(
           fontFamily: secondaryFont,
           fontSize: fontSize,
           fontWeight: FontWeight.w400,
@@ -95,10 +110,10 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         // PREFIX_ICON STYLE
         prefixIcon: (widget.prefixIcon != null)
             ? widthspace(60, widget.prefixIcon)
-            : widthspace(0),
-        prefix: (widget.prefixIcon != null) ? widthspace(0) : widthspace(20),
-        suffix: widthspace(20),
-        contentPadding: const EdgeInsets.all(formTextFieldPadding),
+            : null,
+        prefix: (widget.prefixIcon != null) ? widthspace(0) : widthspace(10),
+        suffix: widthspace(10),
+        contentPadding: const EdgeInsets.all(textFormFieldHorizontalPadding),
       ),
     );
   }
