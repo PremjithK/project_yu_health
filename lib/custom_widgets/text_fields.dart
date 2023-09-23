@@ -17,12 +17,14 @@ class MyTextFormField extends StatefulWidget {
     this.prefixIcon,
     this.keyboardType,
     this.enabled = true,
+    this.filled = false,
     //Event Properties
     this.onChanged,
   });
 
   final String? hint;
   final bool enabled;
+  final bool filled;
   final FormFieldValidator<String>? validator;
   final TextEditingController? controller;
   final bool isPassword;
@@ -57,7 +59,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
       style: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: fontSize,
-        fontFamily: secondaryFont,
+        fontFamily: primaryFont,
         letterSpacing: 0.5,
         color: Theme.of(context).colorScheme.onSurface,
       ),
@@ -69,19 +71,18 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide(
-            color: theme.outline.withOpacity(0.4),
-            width: 2,
+            color: theme.outline.withOpacity(0.3),
           ),
         ),
         //&ERROR MESSAGE STYLE
         errorStyle: TextStyle(
           color: Theme.of(context).colorScheme.error,
           fontSize: 12,
-          fontFamily: secondaryFont,
+          fontFamily: primaryFont,
           fontWeight: FontWeight.w500,
           letterSpacing: 0,
         ),
-        filled: true,
+        filled: widget.filled,
         fillColor: theme.surface,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
@@ -99,9 +100,12 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         // LABEL STYLES
         // HINT STYLES
         labelText: widget.hint,
-        floatingLabelStyle: const TextStyle(fontSize: 16),
+        floatingLabelStyle: const TextStyle(
+          fontSize: 16,
+          fontFamily: primaryFont,
+        ),
         labelStyle: TextStyle(
-          fontFamily: secondaryFont,
+          fontFamily: primaryFont,
           fontSize: fontSize,
           fontWeight: FontWeight.w400,
           color: Theme.of(context).colorScheme.onSurfaceVariant,

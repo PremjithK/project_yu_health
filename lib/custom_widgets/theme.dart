@@ -74,7 +74,9 @@ const darkColorScheme = ColorScheme(
 );
 
 // Theme Data Variables
-ThemeData lightTheme =
-    ThemeData.from(colorScheme: lightColorScheme, useMaterial3: true);
-ThemeData darkTheme =
-    ThemeData.from(colorScheme: darkColorScheme, useMaterial3: true);
+ThemeData lightTheme = ThemeData.from(
+  colorScheme: lightColorScheme,
+);
+ThemeData darkTheme = ThemeData.from(
+  colorScheme: darkColorScheme,
+);

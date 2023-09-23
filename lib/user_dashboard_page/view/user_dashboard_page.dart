@@ -5,7 +5,6 @@ import 'package:yu_health/custom_widgets/dashboard_long_option.dart';
 import 'package:yu_health/custom_widgets/image_banner_card.dart';
 import 'package:yu_health/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
-import 'package:yu_health/custom_widgets/statusbar_coloring.dart';
 import 'package:yu_health/custom_widgets/text_types.dart';
 
 class UserDashboardPage extends StatefulWidget {
@@ -18,9 +17,6 @@ class UserDashboardPage extends StatefulWidget {
 class _UserDashboardPageState extends State<UserDashboardPage> {
   @override
   Widget build(BuildContext context) {
-    //! Making transparent status bar
-    customStatusBar(context, Theme.of(context));
-
     final theme = Theme.of(context).colorScheme;
     //final textTheme = Theme.of(context).textTheme;
     // final deviceHeight = MediaQuery.of(context).size.height;

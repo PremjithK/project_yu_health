@@ -23,13 +23,13 @@ class LoginPage extends StatelessWidget {
 
     // UI
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: theme.background,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Form Items
                 Padding(
