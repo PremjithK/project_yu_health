@@ -35,7 +35,7 @@ class YuAppBar extends StatelessWidget {
               icon: Icon(
                 Icons.arrow_back_ios_new,
                 size: 25,
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
 
@@ -45,7 +45,7 @@ class YuAppBar extends StatelessWidget {
             style: TextStyle(
               fontSize: 25,
               // fontWeight: FontWeight.bold,
-              fontFamily: titleFontFamily,
+              fontFamily: primaryFont,
               fontVariations: const [FontVariation('wght', 600)],
               letterSpacing: -0.25,
               color: Theme.of(context).colorScheme.primary,

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text_fields.dart';
 import 'package:yu_health/custom_widgets/text_types.dart';
-import 'package:yu_health/user_dashboard_page/view/user_dashboard_page.dart';
 import 'package:yu_health/signup_page/view/signup_page.dart';
+import 'package:yu_health/user_dashboard_page/view/user_dashboard_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -71,11 +72,7 @@ class LoginPage extends StatelessWidget {
                         MyTextButton(
                           label: 'Forgot Password?',
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => UserDashboardPage(),
-                                ));
+                            Get.to(UserDashboardPage());
                           },
                         ),
                         heightspace(5),
@@ -92,11 +89,7 @@ class LoginPage extends StatelessWidget {
                         MySecondaryButton(
                           label: 'Create an account',
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SignupPage(),
-                                ));
+                            Get.to(SignupPage());
                           },
                         ),
                       ],

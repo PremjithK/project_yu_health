@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yu_health/custom_widgets/dashboard_circle_option.dart';
 import 'package:yu_health/custom_widgets/dashboard_long_option.dart';
 import 'package:yu_health/custom_widgets/image_banner_card.dart';
+import 'package:yu_health/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/statusbar_coloring.dart';
 import 'package:yu_health/custom_widgets/text_types.dart';
@@ -20,16 +22,16 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
     customStatusBar(context, Theme.of(context));
 
     final theme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
+    //final textTheme = Theme.of(context).textTheme;
     // final deviceHeight = MediaQuery.of(context).size.height;
     //final deviceWidth = MediaQuery.of(context).size.width;
-    // UI
+
+    //? UI
     return Scaffold(
       backgroundColor: theme.background,
       body: ListView(
         physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.zero,
-        // padding: EdgeInsets.all(0),
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -56,24 +58,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                         ),
                       ],
                     ),
-                    // Avatar
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          width: 2,
-                          color: theme.primary,
-                        ),
-                      ),
-                      child: CircleAvatar(
-                        backgroundColor: theme.onPrimary,
-                        minRadius: 25,
-                        child: Icon(
-                          Icons.person,
-                          color: theme.primary,
-                        ),
-                      ),
-                    )
+                    const ProfilePictureAvatar(),
                   ],
                 ),
                 heightspace(15),
@@ -85,7 +70,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                   subTitle: 'Consult with a doctor via Video Call',
                   imageURL: 'assets/images/doctor_with_pc.jpg',
                 ),
-                heightspace(20),
+                heightspace(16),
                 //Dashboard Options
                 DashboardLongOption(
                   onTap: () {},
@@ -93,47 +78,46 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                   subTitle:
                       'Book an offline appointment with a doctor near you',
                   icon: Icon(
-                    Icons.login,
-                    color: textTheme.displayLarge!.color,
-                    size: 30,
+                    FontAwesomeIcons.handshake,
+                    color: theme.onPrimaryContainer,
                   ),
                   color: theme.onBackground,
                 ),
-                heightspace(10),
+                heightspace(8),
                 DashboardLongOption(
                   onTap: () {},
                   title: 'Book Lab Appointment',
                   subTitle: 'Book Lab Tests In A Lab Near You',
                   icon: Icon(
-                    Icons.location_city_outlined,
-                    color: textTheme.displayLarge!.color,
-                    size: 30,
+                    FontAwesomeIcons.flask,
+                    color: theme.onPrimaryContainer,
                   ),
                   color: theme.onBackground,
                 ),
                 heightspace(20),
+
                 //& Circle Options
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     DashboardCircleOption(
                       onTap: () {},
-                      icon: Icons.add_chart_sharp,
+                      icon: FontAwesomeIcons.chartColumn,
                       caption: 'My Lab Reports',
                     ),
                     DashboardCircleOption(
                       onTap: () {},
-                      icon: Icons.file_copy_outlined,
+                      icon: FontAwesomeIcons.fileMedical,
                       caption: 'My Prescriptions',
                     ),
                     DashboardCircleOption(
                       onTap: () {},
-                      icon: Icons.person_outlined,
+                      icon: FontAwesomeIcons.userDoctor,
                       caption: 'Search Doctors',
                     ),
                     DashboardCircleOption(
                       onTap: () {},
-                      icon: Icons.medical_services_outlined,
+                      icon: FontAwesomeIcons.kitMedical,
                       caption: 'Emergency Services',
                     ),
                   ],

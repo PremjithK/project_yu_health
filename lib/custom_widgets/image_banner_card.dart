@@ -28,10 +28,17 @@ class ImageBannerCard extends StatelessWidget {
       onTap: onTap,
       child: Ink(
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: theme.colorScheme.onBackground.withOpacity(0.1),
+              blurRadius: 4,
+              offset: const Offset(1, 1),
+            ),
+          ],
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
             width: 2,
-            color: Colors.transparent,
+            color: theme.colorScheme.outline,
             //width: 1,
           ),
         ),
@@ -47,44 +54,49 @@ class ImageBannerCard extends StatelessWidget {
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
-              BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
-                child: Container(
-                  color: Colors.black.withOpacity(0.6),
-                  width: double.infinity,
-                  height: double.infinity,
-                ),
+              Container(
+                color: Colors.black.withOpacity(0.24),
+                width: double.infinity,
+                height: double.infinity,
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontFamily: titleFontFamily,
-                        fontWeight: FontWeight.bold,
-                        color: theme.colorScheme.onBackground,
-                        letterSpacing: -1,
-                        height: 1,
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: theme.colorScheme.primary,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 21,
+                          fontFamily: primaryFont,
+                          fontWeight: FontWeight.w600,
+                          color: theme.colorScheme.onPrimary.withOpacity(0.9),
+                          letterSpacing: -1,
+                          height: 0.7,
+                        ),
                       ),
-                    ),
-                    Text(
-                      subTitle,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: titleFontFamily,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white.withOpacity(0.75),
-                        height: 1,
-                        letterSpacing: -1,
+                      Text(
+                        subTitle,
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: primaryFont,
+                          fontWeight: FontWeight.w600,
+                          color: theme.colorScheme.onPrimary.withOpacity(0.5),
+                          height: 1,
+                          letterSpacing: -0.5,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             ],

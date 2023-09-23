@@ -30,12 +30,22 @@ class DashboardLongOption extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: Ink(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         width: deviceWidth,
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: theme.colorScheme.onBackground.withOpacity(0.1),
+              blurRadius: 4,
+              offset: const Offset(1, 1),
+            )
+          ],
           color: theme.colorScheme.primaryContainer,
           borderRadius: BorderRadius.circular(
             15,
+          ),
+          border: Border.all(
+            color: theme.colorScheme.onPrimaryContainer.withOpacity(0.25),
           ),
         ),
         child: Row(
@@ -44,12 +54,12 @@ class DashboardLongOption extends StatelessWidget {
               child: CircleAvatar(
                 backgroundColor:
                     theme.colorScheme.onPrimaryContainer.withOpacity(0.1),
-                radius: 25,
+                radius: 26,
                 foregroundColor: theme.colorScheme.primaryContainer,
                 child: icon,
               ),
             ),
-            widthspace(10),
+            widthspace(15),
             Flexible(
               flex: 4,
               child: Column(
@@ -58,10 +68,10 @@ class DashboardLongOption extends StatelessWidget {
                   Text(
                     title,
                     style: TextStyle(
-                      fontFamily: titleFontFamily,
+                      fontFamily: primaryFont,
                       color: theme.colorScheme.onPrimaryContainer,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
                       height: 1,
                     ),
                   ),
@@ -69,11 +79,11 @@ class DashboardLongOption extends StatelessWidget {
                   Text(
                     subTitle,
                     style: TextStyle(
-                      fontFamily: mainFontFamily,
+                      fontFamily: secondaryFont,
                       color: theme.colorScheme.onPrimaryContainer
                           .withOpacity(0.75),
                       fontSize: 13,
-                      fontWeight: FontWeight.w500,
+                      // fontWeight: FontWeight.w500,
                       height: 1,
                     ),
                     maxLines: 2,

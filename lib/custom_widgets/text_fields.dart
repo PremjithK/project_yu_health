@@ -54,7 +54,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
       style: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: fontSize,
-        fontFamily: mainFontFamily,
+        fontFamily: secondaryFont,
         letterSpacing: 0.5,
         color: Theme.of(context).colorScheme.onSurface,
       ),
@@ -64,7 +64,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         errorStyle: TextStyle(
           color: Theme.of(context).colorScheme.error,
           fontSize: 13,
-          fontFamily: mainFontFamily,
+          fontFamily: secondaryFont,
           fontWeight: FontWeight.w500,
           letterSpacing: 0.5,
         ),
@@ -86,7 +86,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         // HINT STYLES
         hintText: widget.hint,
         hintStyle: TextStyle(
-          fontFamily: mainFontFamily,
+          fontFamily: secondaryFont,
           fontSize: fontSize,
           fontWeight: FontWeight.w400,
           color: Theme.of(context).colorScheme.onSurfaceVariant,

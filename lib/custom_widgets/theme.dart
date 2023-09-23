@@ -1,150 +1,10 @@
-// import 'package:flutter/material.dart';
-
-// //! LIGHT MODE
-// //& Background
-// const lightBG = Color(0xfffefbff);
-// const lightOnBG = Color(0xff001f25);
-
-// //& on Background
-
-// //& Primary
-// const lightPrimary = Color(0xFF3268E2);
-// const lightOnPrimary = Color(0xffffffff);
-// //& Secondary
-// const lightSecondary = Color(0xff6b46bf);
-// const lightOnSecondary = Color(0xffffffff);
-// const lightSecondaryContainer = Color(0xffe9ddff);
-// const lightOnSecondaryContainer = Color(0xff23005c);
-
-// //& Container
-// const lightPrimaryContainer = Color(0xffdae2ff);
-// const lightOnPrimaryContainer = Color(0xff001848);
-
-// //& Surface
-// const lightSurface = Color(0xfff8fdff);
-// const lightOnSurface = Color(0xff001f25);
-
-// const lightSurfaceVariant = Color(0xffe1e2ec);
-// const lightOnSurfaceVariant = Color(0xff45464f);
-
-// //& Outline
-// const lightOutline = Color(0xff757780);
-
-// //!----------------
-
-// // Alert Colors
-// const imperialRed = Color.fromARGB(255, 255, 31, 72);
-// const aquaMarine = Color.fromRGBO(27, 218, 170, 1);
-
-// //THEMES
-// //*LIGHT THEME
-// ThemeData lightTheme = ThemeData(
-//   fontFamily: mainFontFamily,
-//   brightness: Brightness.light,
-
-//   //? TEXT THEME
-//   //Title and Heading text colors
-//   textTheme: const TextTheme(
-//     displayLarge: TextStyle(
-//       fontFamily: titleFontFamily,
-//       fontSize: 45,
-//       color: lightOnBG,
-//     ),
-//     displayMedium: TextStyle(
-//       fontFamily: mainFontFamily,
-//       fontSize: 35,
-//       color: Color.fromRGBO(50, 104, 226, 1),
-//     ),
-//     displaySmall: TextStyle(
-//       fontFamily: mainFontFamily,
-//       fontSize: 25,
-//       color: Color.fromRGBO(50, 104, 226, 1),
-//     ),
-//   ),
-
-//   //UI Scheme
-//   colorScheme: ColorScheme.light(
-//     //Background
-//     background: lightBG,
-//     onBackground: lightOnBG,
-
-//     primary: lightPrimary,
-//     //^ onPrimary: onPrimary,
-
-//     primaryContainer: lightPrimaryContainer,
-//     onPrimaryContainer: lightOnPrimaryContainer,
-
-//     surface: lightSurface,
-//     onSurface: lightOnSurface,
-
-//     secondary: lightSecondary,
-//     onSecondary: lightOnSecondary,
-
-//     secondaryContainer: lightSecondaryContainer,
-//     onSecondaryContainer: lightOnSecondaryContainer,
-
-//     inversePrimary: Colors.white,
-
-//     //Lines
-//     outline: lightOutline,
-
-//     outlineVariant: const Color.fromRGBO(19, 19, 22, 0.25),
-//     // Drop Shadow Color
-//     shadow: Colors.black.withOpacity(0.25),
-//     //Text
-//     tertiary: const Color.fromRGBO(68, 68, 75, 1),
-//   ),
-// );
-
-// //! DARK THEME
-// //!--------------
-
-// ThemeData darkTheme = ThemeData(
-//   //? TEXT THEME
-//   //Title and Heading text colors
-//   textTheme: TextTheme(
-//     displayLarge: TextStyle(
-//       fontFamily: titleFontFamily,
-//       fontSize: 45,
-//       color: Colors.white.withOpacity(0.75),
-//     ),
-//     displayMedium: const TextStyle(
-//       fontFamily: mainFontFamily,
-//       fontSize: 35,
-//       color: Color.fromRGBO(50, 104, 226, 1),
-//     ),
-//     displaySmall: const TextStyle(
-//       fontFamily: mainFontFamily,
-//       fontSize: 25,
-//       color: Color.fromRGBO(50, 104, 226, 1),
-//     ),
-//   ),
-
-//   // colorScheme: ColorScheme.dark(
-//   //   //Backgrounds
-//   //   background: darkModeBG,
-//   //   onBackground: Colors.white.withOpacity(0.1),
-
-//   //   // Main Colors
-//   //   primary: brandBlueDarkMode,
-//   //   secondary: Colors.grey.shade200,
-//   //   //Lines
-//   //   outline: brandBlueDarkMode,
-
-//   //   outlineVariant: const Color.fromRGBO(19, 19, 22, 0.25),
-//   //   // Drop Shadow Color
-//   //   shadow: Colors.transparent,
-//   //   //Text
-//   //   tertiary: const Color.fromRGBO(68, 68, 75, 1),
-//   // ),
-// );
-
 import 'package:flutter/material.dart';
 
-// // Custom Fonts
-const String titleFontFamily = 'Metropolis';
-const String mainFontFamily = 'Metropolis';
-
+//? Custom Fonts
+const String primaryFont = 'Metropolis';
+const String secondaryFont = 'RedHat';
+///////////////////////////////////////////////
+// Color Scheme
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xFF1156CE),
@@ -213,7 +73,7 @@ const darkColorScheme = ColorScheme(
   scrim: Color(0xFF000000),
 );
 
-//
+// Theme Data Variables
 ThemeData lightTheme =
     ThemeData.from(colorScheme: lightColorScheme, useMaterial3: true);
 ThemeData darkTheme =

@@ -4,12 +4,12 @@ import 'package:yu_health/custom_widgets/theme.dart';
 enum HeadingSize { veryLarge, large, medium }
 
 class MainHeading extends StatelessWidget {
-  MainHeading({
+  const MainHeading({
     //Custom
     required this.text,
     this.size = 45,
     this.color,
-    this.letterSpacing = -0.5,
+    this.letterSpacing = 0,
     this.weight = FontWeight.w600,
     super.key,
   });
@@ -18,7 +18,7 @@ class MainHeading extends StatelessWidget {
   final Color? color;
   final FontWeight weight;
   final double letterSpacing;
-  double? size;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +27,12 @@ class MainHeading extends StatelessWidget {
       key: key,
       style: TextStyle(
         fontSize: size,
-        fontFamily: mainFontFamily,
+        fontFamily: primaryFont,
         letterSpacing: letterSpacing,
         height: 1.1,
         fontWeight: weight,
         color: (color == null)
-            ? Theme.of(context).colorScheme.onBackground
+            ? Theme.of(context).colorScheme.onBackground.withOpacity(0.9)
             : color,
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 // Common features
-String font = mainFontFamily;
+String font = secondaryFont;
 double fontSize = 16;
 double elevatedButtonPadding = 15;
 double elev = 0;
@@ -39,7 +39,7 @@ class MyTextButton extends StatelessWidget {
         label,
         style: TextStyle(
           color: Theme.of(context).colorScheme.primary,
-          fontFamily: mainFontFamily,
+          fontFamily: secondaryFont,
           fontWeight: FontWeight.w600,
           fontSize: 15,
         ),

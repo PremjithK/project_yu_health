@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 class DashboardCircleOption extends StatefulWidget {
@@ -20,16 +21,15 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-    return Container(
-      // color: Colors.red,
-      width: 80,
-      height: 130,
+    return SizedBox(
+      //color: Colors.red,
+      width: 75,
+      height: 120,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Material(
-            shape: CircleBorder(),
+            shape: const CircleBorder(),
             clipBehavior: Clip.antiAlias,
             color: Colors.transparent,
             child: InkWell(
@@ -42,27 +42,32 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
               // highlightColor: theme.secondaryContainer,
               // splashColor: theme.secondaryContainer,
               child: Ink(
-                height: 80,
-                padding: const EdgeInsets.all(16),
+                height: 75,
+                padding: const EdgeInsets.all(18),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: theme.secondaryContainer,
+                  border: Border.all(
+                    color: theme.onSecondaryContainer.withOpacity(0.25),
+                  ),
                 ),
                 child: Icon(
                   widget.icon,
                   color: theme.onSecondaryContainer,
-                  size: 30,
+                  size: 25,
                 ),
               ),
             ),
           ),
+          heightspace(2),
           Text(
             widget.caption,
             style: TextStyle(
-              fontSize: 12,
-              fontFamily: mainFontFamily,
+              fontSize: 11,
+              fontFamily: secondaryFont,
               fontWeight: FontWeight.w600,
               color: theme.onSecondaryContainer,
+              height: 1.1,
             ),
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
