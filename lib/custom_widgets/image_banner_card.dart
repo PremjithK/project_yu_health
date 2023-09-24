@@ -36,7 +36,6 @@ class ImageBannerCard extends StatelessWidget {
           ],
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
-            width: 2,
             color: theme.colorScheme.outline,
             //width: 1,
           ),

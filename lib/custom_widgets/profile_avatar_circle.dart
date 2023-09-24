@@ -16,16 +16,16 @@ class _ProfilePictureAvatarState extends State<ProfilePictureAvatar> {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          width: 2,
-          color: theme.primary,
+          width: 1,
+          color: theme.onPrimary,
         ),
       ),
       child: CircleAvatar(
-        backgroundColor: theme.onPrimary,
+        backgroundColor: theme.primary,
         minRadius: 22,
         child: Icon(
           Icons.person,
-          color: theme.primary,
+          color: theme.onPrimary,
         ),
       ),
     );

@@ -58,7 +58,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                     const ProfilePictureAvatar(),
                   ],
                 ),
-                heightspace(15),
+                heightspace(20),
                 ImageBannerCard(
                   onTap: () {
                     print("Clicked Banner");
