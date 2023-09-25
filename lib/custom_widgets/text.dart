@@ -9,6 +9,7 @@ class MainHeading extends StatelessWidget {
     this.color,
     this.letterSpacing = 0,
     this.weight = FontWeight.w600,
+    this.textAlign,
     super.key,
   });
 
@@ -17,17 +18,20 @@ class MainHeading extends StatelessWidget {
   final FontWeight weight;
   final double letterSpacing;
   final double? size;
+  final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       key: key,
+      textAlign: textAlign,
       style: TextStyle(
         fontSize: size,
         fontFamily: primaryFont,
         letterSpacing: letterSpacing,
-        height: 1.1,
+        height: 1,
+        wordSpacing: -2,
         fontWeight: weight,
         color: (color == null)
             ? Theme.of(context).colorScheme.onBackground.withOpacity(0.9)

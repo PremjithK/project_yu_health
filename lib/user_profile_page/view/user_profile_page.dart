@@ -11,7 +11,7 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     // Config
     final theme = Theme.of(context).colorScheme;
-    final deviceHeight = MediaQuery.of(context).size.height;
+    // final deviceHeight = MediaQuery.of(context).size.height;
     const imageURL =
         'https://gcavocats.ca/wp-content/uploads/2018/09/man-avatar-icon-flat-vector-19152370-1.jpg';
 
@@ -65,7 +65,7 @@ class UserProfile extends StatelessWidget {
                           color: Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(
-                            color: theme.onBackground.withOpacity(0.25),
+                            color: theme.onBackground.withOpacity(0.1),
                           ),
                         ),
                         height: 300,
