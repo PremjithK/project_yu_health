@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
-enum HeadingSize { veryLarge, large, medium }
-
 class MainHeading extends StatelessWidget {
   const MainHeading({
     //Custom
     required this.text,
-    this.size = 45,
+    this.size = 40,
     this.color,
     this.letterSpacing = 0,
     this.weight = FontWeight.w600,
@@ -37,4 +35,20 @@ class MainHeading extends StatelessWidget {
       ),
     );
   }
+}
+
+// Common text sizes
+class TextSizes {
+  // Headings
+  static double get h1 => 40;
+  static double get h2 => 35;
+  static double get h3 => 30;
+  static double get h4 => 25;
+  static double get h5 => 20;
+  static double get h6 => 18;
+
+  // Body
+  static double get b1 => 16;
+  static double get b2 => 14;
+  static double get b3 => 12;
 }

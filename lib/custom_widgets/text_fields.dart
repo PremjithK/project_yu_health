@@ -3,7 +3,7 @@ import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 const double fontSize = 15;
-const double borderRadius = 15;
+const double borderRadius = 55;
 const double textFormFieldHorizontalPadding = 15;
 //const double textFormFieldVerticalPadding = 12;
 
@@ -67,14 +67,14 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
       //Decoration
       decoration: InputDecoration(
         enabled: widget.enabled,
-
+        //& Disabled Border
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide(
             color: theme.outline.withOpacity(0.3),
           ),
         ),
-        //&ERROR MESSAGE STYLE
+        //& ERROR MESSAGE STYLE
         errorStyle: TextStyle(
           color: Theme.of(context).colorScheme.error,
           fontSize: 12,
@@ -84,13 +84,16 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         ),
         filled: widget.filled,
         fillColor: theme.surface,
+        // & Default Border
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
         ),
+        // & Enabled Border
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          borderSide: BorderSide(color: theme.outline),
+          borderSide: BorderSide(color: theme.outline.withOpacity(0.5)),
         ),
+        // & Focused Border
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius),
           borderSide: BorderSide(

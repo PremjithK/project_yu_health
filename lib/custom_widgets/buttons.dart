@@ -7,7 +7,7 @@ double fontSize = 15;
 double elevatedButtonPadding = 12;
 double elev = 0;
 double borderWidth = 1;
-double mainBorderRadius = 15;
+double mainBorderRadius = 55;
 
 //! Text Button
 class MyTextButton extends StatelessWidget {
@@ -40,7 +40,7 @@ class MyTextButton extends StatelessWidget {
         style: TextStyle(
           color: Theme.of(context).colorScheme.primary,
           fontFamily: secondaryFont,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           fontSize: 15,
         ),
       ),
@@ -72,16 +72,16 @@ class MyPrimaryButton extends StatelessWidget {
           foregroundColor: Theme.of(context).colorScheme.onPrimary,
           textStyle: TextStyle(
             fontFamily: font,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w800,
             fontSize: fontSize,
           ),
           backgroundColor: Theme.of(context).colorScheme.primary,
           padding: EdgeInsets.all(elevatedButtonPadding),
           elevation: elev,
           shape: RoundedRectangleBorder(
-            side: BorderSide(
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
+            // side: BorderSide(
+            //   color: Theme.of(context).colorScheme.onPrimary,
+            // ),
             borderRadius: BorderRadius.circular(mainBorderRadius),
           ),
         ),
@@ -115,7 +115,7 @@ class MySecondaryButton extends StatelessWidget {
           foregroundColor: Theme.of(context).colorScheme.onBackground,
           textStyle: TextStyle(
             fontFamily: font,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w800,
             fontSize: fontSize,
           ),
           backgroundColor: Theme.of(context).colorScheme.background,
@@ -124,12 +124,54 @@ class MySecondaryButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             side: BorderSide(
               width: borderWidth,
-              color: Theme.of(context).colorScheme.outline,
+              color: Theme.of(context).colorScheme.outline.withOpacity(0.5),
             ),
             borderRadius: BorderRadius.circular(mainBorderRadius),
           ),
         ),
         child: Text(label),
+      ),
+    );
+  }
+}
+
+class MyPrimaryButtonWithIcon extends StatelessWidget {
+  const MyPrimaryButtonWithIcon({
+    //Required
+    required this.icon,
+    required this.label,
+    required this.onPressed,
+    // Optional
+    super.key,
+  });
+  final Widget icon;
+  final void Function() onPressed;
+  final String label;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton.icon(
+      onPressed: onPressed,
+      icon: icon,
+      label: Text(label),
+      style: TextButton.styleFrom(
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        textStyle: TextStyle(
+          fontFamily: font,
+          fontWeight: FontWeight.w800,
+          fontSize: fontSize,
+        ),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        padding: EdgeInsets.symmetric(
+          horizontal: elevatedButtonPadding + 5,
+          vertical: elevatedButtonPadding,
+        ),
+        elevation: elev,
+        shape: RoundedRectangleBorder(
+          // side: BorderSide(
+          //   color: Theme.of(context).colorScheme.onPrimary,
+          // ),
+          borderRadius: BorderRadius.circular(mainBorderRadius),
+        ),
       ),
     );
   }

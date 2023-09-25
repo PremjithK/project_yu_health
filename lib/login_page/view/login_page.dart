@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
+import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/text_fields.dart';
-import 'package:yu_health/custom_widgets/text_types.dart';
 import 'package:yu_health/signup_page/view/signup_page.dart';
 import 'package:yu_health/user_dashboard_page/view/user_dashboard_page.dart';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text_fields.dart';
-import 'package:yu_health/custom_widgets/text_types.dart';
+import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/login_page/view/login_page.dart';
 
 class SignupPage extends StatelessWidget {
@@ -10,6 +10,7 @@ class SignupPage extends StatelessWidget {
 
   //Form Controllers
   final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -53,6 +54,24 @@ class SignupPage extends StatelessWidget {
                     },
                   ),
                   heightspace(10),
+                  // MyTextFormField(
+                  //   controller: _dateController,
+                  //   prefixIcon: const Icon(Icons.calendar_month),
+                  //   hint: 'Date of Birth',
+                  //   keyboardType: TextInputType.datetime,
+                  //   validator: (value) {
+                  //     if (value!.isEmpty) {
+                  //       return 'Name cannot be blank';
+                  //     } else {
+                  //       return null;
+                  //     }
+                  //   },
+                  // ),
+                  // InputDatePickerFormField(
+                  //   firstDate: DateTime(1985),
+                  //   lastDate: DateTime(2500),
+                  // ),
+                  // heightspace(10),
                   MyTextFormField(
                     controller: _emailController,
                     validator: (value) {

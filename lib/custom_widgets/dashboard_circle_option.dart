@@ -24,7 +24,7 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
     return SizedBox(
       //color: Colors.red,
       width: 75,
-      height: 120,
+      height: 110,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -35,14 +35,14 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
             child: InkWell(
               onTap: widget.onTap,
               onTapDown: (details) {
-                setState(() {});
+                // setState(() {});
               },
               //
               // focusColor: theme.secondaryContainer,
               // highlightColor: theme.secondaryContainer,
               // splashColor: theme.secondaryContainer,
               child: Ink(
-                height: 75,
+                height: 70,
                 padding: const EdgeInsets.all(18),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -59,7 +59,7 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
               ),
             ),
           ),
-          heightspace(2),
+          heightspace(5),
           Text(
             widget.caption,
             style: TextStyle(

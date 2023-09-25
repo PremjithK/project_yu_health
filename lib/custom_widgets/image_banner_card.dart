@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 class ImageBannerCard extends StatelessWidget {
@@ -64,6 +63,13 @@ class ImageBannerCard extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                   decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        color: Colors.black.withOpacity(0.25),
+                      )
+                    ],
                     borderRadius: BorderRadius.circular(10),
                     color: theme.colorScheme.primary,
                   ),
