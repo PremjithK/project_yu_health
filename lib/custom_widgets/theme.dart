@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 
 //? Custom Fonts
-const String primaryFont = 'Metropolis';
-const String secondaryFont = 'RedHat';
+const String primaryFont = 'Wix';
+const String secondaryFont = primaryFont;
+
+// Text Theme
+const myTextTheme = TextTheme(
+  labelSmall: TextStyle(
+    fontSize: 12,
+    letterSpacing: 0,
+    fontWeight: FontWeight.w600,
+    fontFamily: secondaryFont,
+  ),
+);
 ///////////////////////////////////////////////
 // Color Scheme
 const lightColorScheme = ColorScheme(
@@ -75,8 +85,10 @@ const darkColorScheme = ColorScheme(
 
 // Theme Data Variables
 ThemeData lightTheme = ThemeData.from(
+  textTheme: myTextTheme,
   colorScheme: lightColorScheme,
 );
 ThemeData darkTheme = ThemeData.from(
+  textTheme: myTextTheme,
   colorScheme: darkColorScheme,
 );

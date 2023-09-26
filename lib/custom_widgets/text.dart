@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
-class MainHeading extends StatelessWidget {
-  const MainHeading({
+class MyText extends StatelessWidget {
+  const MyText({
     //Custom
     required this.text,
     this.size = 40,
     this.color,
     this.letterSpacing = 0,
-    this.weight = FontWeight.w600,
+    this.weight = FontWeight.w800,
     this.textAlign,
     super.key,
   });
@@ -31,7 +31,6 @@ class MainHeading extends StatelessWidget {
         fontFamily: primaryFont,
         letterSpacing: letterSpacing,
         height: 1,
-        wordSpacing: -2,
         fontWeight: weight,
         color: (color == null)
             ? Theme.of(context).colorScheme.onBackground.withOpacity(0.9)

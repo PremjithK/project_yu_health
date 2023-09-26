@@ -68,7 +68,7 @@ class DoctorSearchResult extends StatelessWidget {
                     Text(
                       name,
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.w700,
                         fontFamily: secondaryFont,
                         color: theme.colorScheme.onSecondaryContainer,
@@ -88,7 +88,7 @@ class DoctorSearchResult extends StatelessWidget {
                       child: Text(
                         department,
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 12,
                           fontWeight: FontWeight.w700,
                           fontFamily: secondaryFont,
                           color: theme.colorScheme.secondaryContainer,
@@ -99,7 +99,7 @@ class DoctorSearchResult extends StatelessWidget {
                     Text(
                       clinic,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         fontFamily: secondaryFont,
                         color: theme.colorScheme.onSecondaryContainer,
@@ -109,7 +109,7 @@ class DoctorSearchResult extends StatelessWidget {
                     Text(
                       qualification,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         fontFamily: secondaryFont,
                         color: theme.colorScheme.onSecondaryContainer,

@@ -1,126 +1,85 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 
-class UserProfile extends StatelessWidget {
-  const UserProfile({super.key});
+const String imageURL =
+    'https://cdn.hswstatic.com/gif/play/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg';
+
+class UserProfilePage extends StatelessWidget {
+  const UserProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Config
+    //Config
     final theme = Theme.of(context).colorScheme;
-    // final deviceHeight = MediaQuery.of(context).size.height;
-    const imageURL =
-        'https://gcavocats.ca/wp-content/uploads/2018/09/man-avatar-icon-flat-vector-19152370-1.jpg';
 
-    // UI
+    //UI
+    //const Color(0xFF1156CE),
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              heightspace(15),
-              //? Title Section
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    splashRadius: 25,
-                    style: IconButton.styleFrom(
-                      elevation: 0,
-                      shape: const CircleBorder(),
-                      padding: EdgeInsets.zero,
-                      backgroundColor: Colors.transparent,
-                    ),
-                    icon: Icon(
-                      Icons.arrow_back,
-                      color: theme.primary,
-                      size: 28,
-                    ),
-                  ),
-                  widthspace(15),
-                  MainHeading(
-                    text: 'My Profile',
-                    size: TextSizes.h4,
-                    weight: FontWeight.bold,
-                  ),
-                  Spacer(),
-                ],
-              ),
-              heightspace(10),
-              Expanded(
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  children: [
-                    //? User's Info Area
-                    Center(
-                      child: Container(
+      // backgroundColor: theme.background.withOpacity(0.5),
+      body: Stack(
+        children: [
+          Image.network(
+            'https://img.freepik.com/premium-vector/healthcare-concept-with-flat-icons-symbols_322958-421.jpg',
+            fit: BoxFit.cover,
+            height: 300,
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 210),
+            decoration: BoxDecoration(
+              color: theme.background,
+            ),
+            height: double.infinity,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 110),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Column(
+                    children: [
+                      Container(
+                        // padding: const EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(15),
                           border: Border.all(
-                            color: theme.onBackground.withOpacity(0.1),
+                            width: 5,
+                            color: theme.background,
                           ),
-                        ),
-                        height: 300,
-                        width: double.infinity,
-                        child: ClipRRect(
+                          boxShadow: [
+                            BoxShadow(
+                              color: theme.onBackground.withOpacity(0.25),
+                              blurRadius: 10,
+                            ),
+                          ],
                           borderRadius: BorderRadius.circular(15),
+                          color: theme.background,
+                        ),
+                        height: 200,
+                        width: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(11),
                           child: Image.network(
                             imageURL,
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                    ),
-                    //? User's Profile Details
-                    heightspace(30),
-                    // Full Name
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        MainHeading(
-                          text: 'Dave Smith',
-                          letterSpacing: -0.5,
-                          size: TextSizes.h3,
-                          weight: FontWeight.bold,
-                        ),
-                        MainHeading(text: '04-05-1989', size: TextSizes.h5),
-                      ],
-                    ),
-
-                    // Date of birth with DatePicker
-                    // Phone number
-                    // Location
-                  ],
+                      heightspace(25),
+                      MyText(
+                        text: 'Ben Johnson',
+                        weight: FontWeight.bold,
+                        size: TextSizes.h3,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              // End of Options
-              heightspace(5),
-
-              MyPrimaryButtonWithIcon(
-                icon: Icon(Icons.logout),
-                label: 'Logout',
-                onPressed: () {},
-              ),
-
-              heightspace(10),
-            ],
-          ),
-        ),
+                //? Editable Text Fields
+              ],
+            ),
+          )
+        ],
       ),
-      // //FAB
-      // floatingActionButton: MyPrimaryButton(
-      //   label: 'Edit Profile',
-      //   width: 150,
-      //   onPressed: () {},
-      // ),
     );
   }
 }

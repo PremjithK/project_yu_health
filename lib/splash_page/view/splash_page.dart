@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:yu_health/login_page/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,14 +16,9 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(
-      Duration(milliseconds: 2500),
+      const Duration(milliseconds: 2500),
       () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LoginPage(),
-          ),
-        );
+        Get.to(LoginPage());
       },
     );
   }

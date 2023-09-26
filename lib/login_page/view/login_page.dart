@@ -5,7 +5,7 @@ import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/text_fields.dart';
 import 'package:yu_health/signup_page/view/signup_page.dart';
-import 'package:yu_health/user_dashboard_page/view/user_dashboard_page.dart';
+import 'package:yu_health/user_home_page/view/user_home_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -23,7 +23,6 @@ class LoginPage extends StatelessWidget {
 
     // UI
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: theme.background,
       body: SafeArea(
         child: Column(
@@ -39,7 +38,7 @@ class LoginPage extends StatelessWidget {
                       key: _formKey,
                       child: Column(
                         children: [
-                          const MainHeading(
+                          const MyText(
                             text: 'Log In',
                             weight: FontWeight.w800,
                             textAlign: TextAlign.center,
@@ -79,7 +78,7 @@ class LoginPage extends StatelessWidget {
                           MyTextButton(
                             label: 'Forgot Password?',
                             onPressed: () {
-                              Get.to(UserDashboardPage());
+                              Get.to(HomePage());
                             },
                           ),
                           heightspace(20),

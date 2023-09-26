@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/doctor_search_result.dart';
-import 'package:yu_health/custom_widgets/main_search_bar.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
+import 'package:yu_health/custom_widgets/yu_search_bar.dart';
 
 class Doctor {
   Doctor({
@@ -89,15 +89,14 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              heightspace(25),
-              MainHeading(
+              heightspace(15),
+              MyText(
                 text: 'Search Doctors',
-                size: TextSizes.h4,
-                weight: FontWeight.bold,
-                color: theme.colorScheme.primary,
+                size: TextSizes.h3,
+                letterSpacing: -1,
               ),
               heightspace(15),
-              MainSearchBar(
+              MySearchBar(
                 onChanged: filterDoctors,
                 controller: _searchController,
                 hint: 'Enter a name, department or hospital',

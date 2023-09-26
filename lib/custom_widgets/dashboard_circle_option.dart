@@ -48,7 +48,7 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
                   shape: BoxShape.circle,
                   color: theme.secondaryContainer,
                   border: Border.all(
-                    color: theme.onSecondaryContainer.withOpacity(0.25),
+                    color: theme.onSecondaryContainer.withOpacity(0.1),
                   ),
                 ),
                 child: Icon(

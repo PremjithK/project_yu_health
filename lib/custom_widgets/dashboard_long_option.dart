@@ -33,18 +33,12 @@ class DashboardLongOption extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
         width: deviceWidth,
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: theme.colorScheme.onBackground.withOpacity(0.1),
-              blurRadius: 4,
-            )
-          ],
           color: theme.colorScheme.primaryContainer,
           borderRadius: BorderRadius.circular(
             15,
           ),
           border: Border.all(
-            color: theme.colorScheme.onPrimaryContainer.withOpacity(0.25),
+            color: theme.colorScheme.onPrimaryContainer.withOpacity(0.1),
           ),
         ),
         child: Row(
