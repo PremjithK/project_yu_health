@@ -44,8 +44,8 @@ class _HomePageState extends State<HomePage> {
           color: theme.background,
           boxShadow: [
             BoxShadow(
-              color: theme.onBackground.withOpacity(0.1),
-              blurRadius: 5,
+              color: theme.onBackground.withOpacity(0.15),
+              blurRadius: 10,
             )
           ],
         ),

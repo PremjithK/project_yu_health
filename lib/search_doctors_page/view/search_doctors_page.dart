@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yu_health/custom_widgets/doctor_search_result.dart';
+import 'package:yu_health/custom_widgets/doctor_search_result_card.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/yu_search_bar.dart';
@@ -10,12 +10,14 @@ class Doctor {
     required this.department,
     required this.qualification,
     required this.clinic,
+    required this.imageURL,
     required this.isOnline,
   });
   final String name;
   final String department;
   final String qualification;
   final String clinic;
+  final String imageURL;
   final bool isOnline;
 }
 
@@ -35,7 +37,9 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
     Doctor(
       name: 'Arun',
       department: 'ENT',
-      qualification: 'MBBS MD',
+      qualification: 'MBBS',
+      imageURL:
+          'https://media.istockphoto.com/id/1470505351/photo/portrait-of-a-smiling-doctor-holding-glasses-and-a-mobile-phone-at-the-office.webp?b=1&s=170667a&w=0&k=20&c=8CebFLF4PFnt9JYJznGhYoOQxcyHLVpTGVfkvEsZd2Q=',
       clinic: 'MIMS',
       isOnline: true,
     ),
@@ -43,6 +47,17 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
       name: 'Vimal',
       department: 'ORTHO',
       qualification: 'MBBS MD',
+      imageURL:
+          'https://media.istockphoto.com/id/1470505351/photo/portrait-of-a-smiling-doctor-holding-glasses-and-a-mobile-phone-at-the-office.webp?b=1&s=170667a&w=0&k=20&c=8CebFLF4PFnt9JYJznGhYoOQxcyHLVpTGVfkvEsZd2Q=',
+      clinic: 'BMH',
+      isOnline: true,
+    ),
+    Doctor(
+      name: 'Vimal',
+      department: 'ORTHO',
+      qualification: 'MBBS MD',
+      imageURL:
+          'https://media.istockphoto.com/id/1470505351/photo/portrait-of-a-smiling-doctor-holding-glasses-and-a-mobile-phone-at-the-office.webp?b=1&s=170667a&w=0&k=20&c=8CebFLF4PFnt9JYJznGhYoOQxcyHLVpTGVfkvEsZd2Q=',
       clinic: 'BMH',
       isOnline: true,
     ),
@@ -84,45 +99,56 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
     return Scaffold(
       backgroundColor: theme.colorScheme.background,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              heightspace(15),
-              MyText(
-                text: 'Search Doctors',
-                size: TextSizes.h3,
-                letterSpacing: -1,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  heightspace(15),
+                  MyText(
+                    text: 'Search Doctors',
+                    size: TextSizes.h3,
+                    letterSpacing: -1,
+                  ),
+                  heightspace(15),
+                  MySearchBar(
+                    onChanged: filterDoctors,
+                    controller: _searchController,
+                    hint: 'Enter a name, department or hospital',
+                  ),
+                  heightspace(20),
+                ],
               ),
-              heightspace(15),
-              MySearchBar(
-                onChanged: filterDoctors,
-                controller: _searchController,
-                hint: 'Enter a name, department or hospital',
-              ),
-              heightspace(20),
-              Expanded(
-                child: ListView.builder(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  itemCount: filteredDoctors.length,
-                  itemBuilder: (context, index) {
-                    //
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: DoctorSearchResult(
-                        name: filteredDoctors[index].name,
-                        department: filteredDoctors[index].department,
-                        qualification: filteredDoctors[index].qualification,
-                        clinic: filteredDoctors[index].clinic,
-                      ),
-                    );
-                  },
+            ),
+
+            //Doctors Search Results GridView
+            Expanded(
+              child: GridView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                shrinkWrap: true,
+                itemCount: filteredDoctors.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  childAspectRatio: 0.75,
                 ),
+                itemBuilder: (context, index) {
+                  return DoctorSearchResultCard(
+                    name: filteredDoctors[index].name,
+                    specialization: filteredDoctors[index].department,
+                    clinic: filteredDoctors[index].clinic,
+                    imageURL: filteredDoctors[index].imageURL,
+                    onTap: () {
+                      print('Clicked Card');
+                    },
+                  );
+                },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

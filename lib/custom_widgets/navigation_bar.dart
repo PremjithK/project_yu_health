@@ -7,10 +7,14 @@ class MyNavigationBar extends StatelessWidget {
   const MyNavigationBar({
     required this.selectedIndex,
     required this.onDestinationSelected,
+    this.backgroundColor = Colors.transparent,
+    this.height = 65,
     super.key,
   });
 
   final int selectedIndex;
+  final Color backgroundColor;
+  final double height;
   final void Function(int index) onDestinationSelected;
   @override
   Widget build(BuildContext context) {
@@ -19,12 +23,18 @@ class MyNavigationBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: NavigationBar(
-        height: 65,
+        height: height,
         indicatorColor: theme.primary,
-        backgroundColor: Colors.transparent,
+        backgroundColor: backgroundColor,
+        indicatorShape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.horizontal(
+            left: Radius.circular(10),
+            right: Radius.circular(10),
+          ),
+        ),
         destinations: [
           NavigationDestination(
-            icon: Icon(
+            icon: const Icon(
               FontAwesomeIcons.house,
               size: commonIconSize,
             ),
@@ -36,7 +46,7 @@ class MyNavigationBar extends StatelessWidget {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(
+            icon: const Icon(
               FontAwesomeIcons.stethoscope,
               size: commonIconSize,
             ),
@@ -48,7 +58,7 @@ class MyNavigationBar extends StatelessWidget {
             label: 'Doctors',
           ),
           NavigationDestination(
-            icon: Icon(
+            icon: const Icon(
               FontAwesomeIcons.flaskVial,
               size: commonIconSize,
             ),
@@ -60,7 +70,7 @@ class MyNavigationBar extends StatelessWidget {
             label: 'Labs',
           ),
           NavigationDestination(
-            icon: Icon(
+            icon: const Icon(
               Icons.person,
               size: commonIconSize + 10,
             ),
