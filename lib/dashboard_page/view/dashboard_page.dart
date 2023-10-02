@@ -35,12 +35,12 @@ class _DashboardPageState extends State<DashboardPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    MyText(
+                    MyHeading(
                       text: 'Yourname',
                       size: TextSizes.h5,
                       weight: FontWeight.w600,
                     ),
-                    MyText(
+                    MyHeading(
                       text: 'Dashboard',
                       color: theme.primary,
                       size: TextSizes.h4,

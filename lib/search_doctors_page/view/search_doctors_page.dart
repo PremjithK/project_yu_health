@@ -52,15 +52,6 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
       clinic: 'BMH',
       isOnline: true,
     ),
-    Doctor(
-      name: 'Vimal',
-      department: 'ORTHO',
-      qualification: 'MBBS MD',
-      imageURL:
-          'https://media.istockphoto.com/id/1470505351/photo/portrait-of-a-smiling-doctor-holding-glasses-and-a-mobile-phone-at-the-office.webp?b=1&s=170667a&w=0&k=20&c=8CebFLF4PFnt9JYJznGhYoOQxcyHLVpTGVfkvEsZd2Q=',
-      clinic: 'BMH',
-      isOnline: true,
-    ),
   ];
 
   @override
@@ -72,7 +63,8 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
 
   final List<Doctor> filteredDoctors = [];
 
-  void filterDoctors(String value) {
+  // Filtering through doctor results
+  Future<void> filterDoctors(String value) async {
     final searchResults = <Doctor>[];
     setState(() {
       searchResults.addAll(allDoctors);
@@ -101,39 +93,41 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  heightspace(15),
-                  MyText(
-                    text: 'Search Doctors',
-                    size: TextSizes.h3,
-                    letterSpacing: -1,
-                  ),
-                  heightspace(15),
-                  MySearchBar(
-                    onChanged: filterDoctors,
-                    controller: _searchController,
-                    hint: 'Enter a name, department or hospital',
-                  ),
-                  heightspace(20),
-                ],
+            ColoredBox(
+              color: theme.colorScheme.background,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    heightspace(15),
+                    MyHeading(
+                      text: 'Search Doctors',
+                      size: TextSizes.h3,
+                      letterSpacing: -1,
+                    ),
+                    heightspace(10),
+                    MySearchBar(
+                      onChanged: filterDoctors,
+                      controller: _searchController,
+                      hint: 'Search by name, specialization or clinic',
+                    ),
+                    heightspace(20),
+                  ],
+                ),
               ),
             ),
 
-            //Doctors Search Results GridView
+            //! Doctors Search Results GridView
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                shrinkWrap: true,
                 itemCount: filteredDoctors.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
-                  childAspectRatio: 0.75,
+                  childAspectRatio: 0.6,
                 ),
                 itemBuilder: (context, index) {
                   return DoctorSearchResultCard(

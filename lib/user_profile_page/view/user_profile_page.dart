@@ -16,69 +16,52 @@ class UserProfilePage extends StatelessWidget {
     //UI
     //const Color(0xFF1156CE),
     return Scaffold(
-      // backgroundColor: theme.background.withOpacity(0.5),
-      body: Stack(
-        children: [
-          Image.network(
-            'https://img.freepik.com/premium-vector/healthcare-concept-with-flat-icons-symbols_322958-421.jpg',
-            fit: BoxFit.cover,
-            height: 300,
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 210),
-            decoration: BoxDecoration(
-              color: theme.background,
-            ),
-            height: double.infinity,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 110),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Column(
-                    children: [
-                      Container(
-                        // padding: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 5,
-                            color: theme.background,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: theme.onBackground.withOpacity(0.25),
-                              blurRadius: 10,
-                            ),
-                          ],
-                          borderRadius: BorderRadius.circular(15),
-                          color: theme.background,
-                        ),
-                        height: 200,
-                        width: 200,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(11),
-                          child: Image.network(
-                            imageURL,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      heightspace(25),
-                      MyText(
-                        text: 'Ben Johnson',
-                        weight: FontWeight.bold,
-                        size: TextSizes.h3,
-                      ),
-                    ],
-                  ),
+      backgroundColor: theme.background,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              MyHeading(
+                text: 'Profile',
+                size: TextSizes.h3,
+                letterSpacing: -0.5,
+              ),
+              heightspace(25),
+              // Profile Picture and change button
+              Center(
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  decoration:
+                      BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(15)),
                 ),
-                //? Editable Text Fields
-              ],
-            ),
-          )
-        ],
+              ),
+              // Information
+              heightspace(25),
+              const Divider(),
+              heightspace(10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MyLabel(
+                    text: 'First Name'.toUpperCase(),
+                    size: TextSizes.b3,
+                    letterSpacing: 1,
+                    color: theme.onBackground.withOpacity(0.8),
+                  ),
+                  MyLabel(
+                    text: 'Rudeus',
+                    weight: FontWeight.w500,
+                    size: TextSizes.h4,
+                  ),
+                  heightspace(10),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

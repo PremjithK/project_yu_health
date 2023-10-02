@@ -15,8 +15,7 @@ class SignupPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _passwordConfirmController =
-      TextEditingController();
+  final TextEditingController _passwordConfirmController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -43,7 +42,7 @@ class SignupPage extends StatelessWidget {
                   key: _formKey,
                   child: Column(
                     children: [
-                      const MyText(
+                      const MyHeading(
                         text: 'Join YuHealth',
                         textAlign: TextAlign.center,
                         letterSpacing: -1,
@@ -120,6 +119,7 @@ class SignupPage extends StatelessWidget {
 
                       //primaryButton('LOGIN', (), context),
                       MyPrimaryButton(
+                        width: double.infinity,
                         label: 'Create Account',
                         onPressed: () {
                           if (_formKey.currentState!.validate() == true) {
@@ -141,14 +141,14 @@ class SignupPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          MyText(
+                          MyHeading(
                             text: 'Already have an account? ',
                             size: TextSizes.b2,
                             weight: FontWeight.w600,
                           ),
                           GestureDetector(
                             onTap: () => Get.to(LoginPage()),
-                            child: MyText(
+                            child: MyHeading(
                               text: 'Log In',
                               size: TextSizes.b2,
                               color: theme.primary,

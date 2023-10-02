@@ -13,7 +13,7 @@ class SearchLabsPage extends StatelessWidget {
           heightspace(15),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: MyText(
+            child: MyHeading(
               text: 'Search Labs',
               size: TextSizes.h3,
               letterSpacing: -1,

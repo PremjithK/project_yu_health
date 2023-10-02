@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 // Common features
-String font = secondaryFont;
+String font = primaryFont;
 double fontSize = 15;
 double elevatedButtonPadding = 12;
 double elev = 0;
 double borderWidth = 1;
-double mainBorderRadius = 55;
+double mainBorderRadius = 60;
+double elevatedButtonLetterSpacing = 0.1;
 
 //! Text Button
 class MyTextButton extends StatelessWidget {
@@ -17,7 +19,7 @@ class MyTextButton extends StatelessWidget {
     required this.onPressed,
     super.key,
     //Optional
-    this.width = double.infinity,
+    this.width = 100,
   });
 
   final String label;
@@ -39,9 +41,9 @@ class MyTextButton extends StatelessWidget {
         label,
         style: TextStyle(
           color: Theme.of(context).colorScheme.primary,
-          fontFamily: secondaryFont,
+          fontFamily: primaryFont,
           fontWeight: FontWeight.w600,
-          fontSize: 15,
+          fontSize: TextSizes.b2,
         ),
       ),
     );
@@ -54,7 +56,7 @@ class MyPrimaryButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     // Optional
-    this.width = double.infinity,
+    this.width,
     super.key,
   });
 
@@ -97,7 +99,7 @@ class MySecondaryButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     // Optional
-    this.width = double.infinity,
+    this.width,
     super.key,
   });
 
@@ -117,6 +119,7 @@ class MySecondaryButton extends StatelessWidget {
             fontFamily: font,
             fontWeight: FontWeight.w800,
             fontSize: fontSize,
+            letterSpacing: elevatedButtonLetterSpacing,
           ),
           backgroundColor: Theme.of(context).colorScheme.background,
           padding: EdgeInsets.all(elevatedButtonPadding),

@@ -26,11 +26,11 @@ class MySearchBar extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: [
-          BoxShadow(
-            color: theme.onBackground.withOpacity(0.1),
-            blurRadius: 5,
-            spreadRadius: 2,
-          ),
+          // BoxShadow(
+          //   color: theme.onBackground.withOpacity(0.1),
+          //   blurRadius: 5,
+          //   spreadRadius: 2,
+          // ),
         ],
       ),
       child: TextFormField(
@@ -52,7 +52,7 @@ class MySearchBar extends StatelessWidget {
 
           hintStyle: TextStyle(
             fontSize: 15,
-            color: theme.onBackground.withOpacity(0.4),
+            color: theme.onBackground.withOpacity(0.3),
             height: 1,
           ),
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 //? Custom Fonts
 const String primaryFont = 'Wix';
-const String secondaryFont = primaryFont;
+const String secondaryFont = 'RedHat';
 
 // Text Theme
 const myTextTheme = TextTheme(

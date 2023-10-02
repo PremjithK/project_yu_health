@@ -38,7 +38,7 @@ class LoginPage extends StatelessWidget {
                       key: _formKey,
                       child: Column(
                         children: [
-                          const MyText(
+                          const MyHeading(
                             text: 'Log In',
                             weight: FontWeight.w800,
                             textAlign: TextAlign.center,
@@ -82,8 +82,8 @@ class LoginPage extends StatelessWidget {
                             },
                           ),
                           heightspace(20),
-                          //primaryButton('LOGIN', (), context),
                           MyPrimaryButton(
+                            width: double.infinity,
                             label: 'Log In',
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
@@ -93,6 +93,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           heightspace(5),
                           MySecondaryButton(
+                            width: double.infinity,
                             label: 'Create an account',
                             onPressed: () {
                               Get.to(SignupPage());

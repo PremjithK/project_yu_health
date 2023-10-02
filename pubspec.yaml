@@ -59,4 +59,8 @@ flutter:
           weight: 700
         - asset: assets/fonts/WixMadeforDisplay-ExtraBold.ttf
           weight: 800
+    - family: OxygenMono
+      fonts:
+        - asset: assets/fonts/OxygenMono-Regular.ttf
+          weight: 400
 
