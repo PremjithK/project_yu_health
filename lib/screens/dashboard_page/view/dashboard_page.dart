@@ -7,7 +7,7 @@ import 'package:yu_health/custom_widgets/image_banner_card.dart';
 import 'package:yu_health/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
-import 'package:yu_health/search_doctors_page/view/search_doctors_page.dart';
+import 'package:yu_health/screens/search_doctors_page/view/search_doctors_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -36,12 +36,13 @@ class _DashboardPageState extends State<DashboardPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MyHeading(
-                      text: 'Yourname',
+                      text: 'Dave Smith',
+                      letterSpacing: -0.5,
                       size: TextSizes.h5,
                       weight: FontWeight.w600,
                     ),
                     MyHeading(
-                      text: 'Dashboard',
+                      text: 'YuHealth.',
                       color: theme.primary,
                       size: TextSizes.h4,
                     ),
@@ -103,7 +104,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
                 DashboardCircleOption(
                   onTap: () {
-                    Get.to(SearchDoctorsPage());
+                    Get.to<Widget>(const SearchDoctorsPage());
                   },
                   icon: FontAwesomeIcons.userDoctor,
                   caption: 'Search Doctors',

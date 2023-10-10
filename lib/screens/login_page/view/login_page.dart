@@ -4,8 +4,8 @@ import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/text_fields.dart';
-import 'package:yu_health/signup_page/view/signup_page.dart';
-import 'package:yu_health/user_home_page/view/user_home_page.dart';
+import 'package:yu_health/screens/signup_page/view/signup_page.dart';
+import 'package:yu_health/screens/user_home_page/view/user_home_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -78,7 +78,7 @@ class LoginPage extends StatelessWidget {
                           MyTextButton(
                             label: 'Forgot Password?',
                             onPressed: () {
-                              Get.to(HomePage());
+                              Get.to<Widget>(const HomePage());
                             },
                           ),
                           heightspace(20),
@@ -96,7 +96,7 @@ class LoginPage extends StatelessWidget {
                             width: double.infinity,
                             label: 'Create an account',
                             onPressed: () {
-                              Get.to(SignupPage());
+                              Get.to<Widget>(SignupPage());
                             },
                           ),
                         ],

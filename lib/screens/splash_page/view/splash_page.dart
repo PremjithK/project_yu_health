@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yu_health/login_page/login_page.dart';
+import 'package:yu_health/screens/login_page/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -16,9 +16,9 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(
-      const Duration(milliseconds: 2500),
+      const Duration(milliseconds: 2100),
       () {
-        Get.to(LoginPage());
+        Get.to<Widget>(LoginPage());
       },
     );
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/navigation_bar.dart';
-import 'package:yu_health/dashboard_page/view/dashboard_page.dart';
-import 'package:yu_health/search_doctors_page/search_doctors_page.dart';
-import 'package:yu_health/search_labs.dart/search_labs_page.dart';
-import 'package:yu_health/user_profile_page/user_profile_page.dart';
+import 'package:yu_health/screens/dashboard_page/view/dashboard_page.dart';
+import 'package:yu_health/screens/search_doctors_page/search_doctors_page.dart';
+import 'package:yu_health/screens/search_labs.dart/search_labs_page.dart';
+import 'package:yu_health/screens/user_profile_page/user_profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   //^ Navigation Bar Destinations
-  final List<Widget> _pages = [
+  final List<Widget> _pages = const [
     DashboardPage(),
     SearchDoctorsPage(),
     SearchLabsPage(),
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             BoxShadow(
               color: theme.onBackground.withOpacity(0.15),
               blurRadius: 10,
-            )
+            ),
           ],
         ),
         child: MyNavigationBar(

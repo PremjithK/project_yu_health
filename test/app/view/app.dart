@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 import 'package:yu_health/l10n/l10n.dart';
 // import 'package:yu_health/login_page/view/login_page.dart';
-import 'package:yu_health/splash_page/view/splash_page.dart';
+import 'package:yu_health/screens/splash_page/view/splash_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
