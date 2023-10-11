@@ -56,17 +56,20 @@ class _ProfilePictureEditableState extends State<ProfilePictureEditable> {
               boxShadow: [
                 BoxShadow(
                   blurRadius: 5,
-                  color: Colors.black.withOpacity(0.25),
+                  color: Colors.black.withOpacity(0.15),
                 ),
               ],
               shape: BoxShape.circle,
             ),
             child: CircleAvatar(
-              radius: 25,
+              radius: 20,
               foregroundColor: theme.onPrimary,
               backgroundColor: theme.primary,
               child: IconButton(
-                onPressed: () {},
+                splashRadius: 25,
+                onPressed: () {
+                  print('Edit clicked');
+                },
                 icon: const Icon(Icons.edit),
               ),
             ),

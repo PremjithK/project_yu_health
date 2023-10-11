@@ -38,7 +38,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     MyHeading(
                       text: 'Dave Smith',
                       letterSpacing: -0.5,
-                      size: TextSizes.h5,
+                      size: TextSizes.h6,
                       weight: FontWeight.w600,
                     ),
                     MyHeading(
