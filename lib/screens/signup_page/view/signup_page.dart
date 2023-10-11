@@ -6,19 +6,44 @@ import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/text_fields.dart';
 import 'package:yu_health/screens/login_page/view/login_page.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   SignupPage({super.key});
 
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
   //? Form Controllers
+  final TextEditingController _dateController = TextEditingController();
+  DateTime? selectedDate;
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
-  final TextEditingController _dateController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _passwordConfirmController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
+
+  //Date
+  final firstDate = DateTime(1950);
+  final finalDate = DateTime(2500);
+
+  Future<void> selectDate(BuildContext context) async {
+    final pickedDate = await showDatePicker(
+      context: context,
+      initialDate: selectedDate ?? DateTime.now(),
+      firstDate: firstDate,
+      lastDate: finalDate,
+    );
+    if (pickedDate == null && pickedDate != selectedDate) {
+      setState(() {
+        selectedDate = pickedDate;
+        _dateController.text = selectedDate.toString();
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,12 +93,41 @@ class SignupPage extends StatelessWidget {
                   },
                 ),
                 heightspace(10),
-                //!  Date Field With Date Picker Needed
-                MyDateFormField(
-                  controller: _dateController,
-                  keyboardType: TextInputType.datetime,
-                  prefixIcon: Icon(Icons.calendar_month),
-                  hint: 'Date Of Birth',
+                //!  Date Field With Date Picker on Tap
+                Flex(
+                  direction: Axis.horizontal,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(
+                      flex: 3,
+                      child: MyDateFormField(
+                        // enabled: false,
+                        onTap: () {},
+                        controller: _dateController,
+                        keyboardType: TextInputType.datetime,
+                        prefixIcon: const Icon(Icons.edit_calendar_sharp),
+                        hint: 'Date Of Birth',
+                      ),
+                    ),
+                    widthspace(5),
+                    // Flexible(
+                    //   flex: 1,
+                    //   child: MySecondaryButton(
+                    //     label: 'Date',
+                    //     onPressed: () {
+                    //       // showDatePicker(
+                    //       //   context: context,
+                    //       //   initialDate: DateTime.now(),
+                    //       //   firstDate: firstDate,
+                    //       //   lastDate: finalDate,
+                    //       // ).then((value) {
+                    //       //   //
+                    //       //   _dateController.text = '${value!.day}/${value.month}/${value.year}';
+                    //       // });
+                    //     },
+                    //   ),
+                    // ),
+                  ],
                 ),
                 heightspace(10),
                 const Divider(),

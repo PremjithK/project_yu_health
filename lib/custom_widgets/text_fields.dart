@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
+import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
-const double fontSize = 15;
+const double fontSize = 16;
 const double borderRadius = 55;
 const double textFormFieldHorizontalPadding = 15;
-//const double textFormFieldVerticalPadding = 12;
 
 class MyTextFormField extends StatefulWidget {
   const MyTextFormField({
@@ -78,7 +78,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         //& ERROR MESSAGE STYLE
         errorStyle: TextStyle(
           color: Theme.of(context).colorScheme.error,
-          fontSize: 12,
+          fontSize: TextSizes.b3,
           fontFamily: primaryFont,
           fontWeight: FontWeight.w500,
           letterSpacing: 0,
@@ -104,8 +104,8 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         // LABEL STYLES
         // HINT STYLES
         labelText: widget.hint,
-        floatingLabelStyle: const TextStyle(
-          fontSize: 16,
+        floatingLabelStyle: TextStyle(
+          fontSize: TextSizes.b1,
           fontFamily: primaryFont,
         ),
         labelStyle: TextStyle(
@@ -125,20 +125,21 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
   }
 }
 
-//! DATE
+//! DATE PICKER
 class MyDateFormField extends StatefulWidget {
   const MyDateFormField({
+    this.prefixIcon,
     super.key,
     this.hint,
     this.validator,
     this.controller,
     this.isPassword = false,
-    this.prefixIcon,
     this.keyboardType,
     this.enabled = true,
     this.filled = false,
     //Event Properties
     this.onChanged,
+    this.onTap,
   });
 
   final String? hint;
@@ -150,8 +151,9 @@ class MyDateFormField extends StatefulWidget {
   final Icon? prefixIcon;
   final TextInputType? keyboardType;
 
-  //Event Functions Being Passed
+  //Event Functions
   final void Function(String)? onChanged;
+  final void Function()? onTap;
 
   //
   @override
@@ -170,9 +172,10 @@ class _MyDateFormFieldState extends State<MyDateFormField> {
       validator: widget.validator,
       obscureText: widget.isPassword,
       keyboardType: widget.keyboardType,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
+      autovalidateMode: AutovalidateMode.always,
       //Events
       onChanged: widget.onChanged,
+      onTap: widget.onTap,
 
       // INPUT TEXT STYLE
       style: TextStyle(
@@ -182,11 +185,15 @@ class _MyDateFormFieldState extends State<MyDateFormField> {
         letterSpacing: 0.5,
         color: Theme.of(context).colorScheme.onSurface,
       ),
+      readOnly: true,
 
-      //Decoration
-      inputFormatters: [
-        FilteringTextInputFormatter.deny(RegExp(r'[/\\]')),
-      ],
+      // Decoration
+      // inputFormatters: [
+      //   FilteringTextInputFormatter.singleLineFormatter,
+      //   FilteringTextInputFormatter.allow(
+      //     RegExp(r'^[1-9]'),
+      //   ),
+      // ],
       decoration: InputDecoration(
         enabled: widget.enabled,
         //& Disabled Border
@@ -199,7 +206,7 @@ class _MyDateFormFieldState extends State<MyDateFormField> {
         //& ERROR MESSAGE STYLE
         errorStyle: TextStyle(
           color: Theme.of(context).colorScheme.error,
-          fontSize: 12,
+          fontSize: TextSizes.b3,
           fontFamily: primaryFont,
           fontWeight: FontWeight.w500,
           letterSpacing: 0,
@@ -222,11 +229,11 @@ class _MyDateFormFieldState extends State<MyDateFormField> {
             color: theme.primary,
           ),
         ),
-        // LABEL STYLES
-        // HINT STYLES
+
+        //& LABEL STYLES
         labelText: widget.hint,
-        floatingLabelStyle: const TextStyle(
-          fontSize: 16,
+        floatingLabelStyle: TextStyle(
+          fontSize: TextSizes.b1,
           fontFamily: primaryFont,
         ),
         labelStyle: TextStyle(
@@ -236,7 +243,7 @@ class _MyDateFormFieldState extends State<MyDateFormField> {
           color: Theme.of(context).colorScheme.onSurfaceVariant,
         ),
 
-        // PREFIX_ICON STYLE
+        //   //& PREFIX_ICON
         prefixIcon: (widget.prefixIcon != null) ? widthspace(60, widget.prefixIcon) : null,
         prefix: (widget.prefixIcon != null) ? widthspace(0) : widthspace(10),
         suffix: widthspace(10),
