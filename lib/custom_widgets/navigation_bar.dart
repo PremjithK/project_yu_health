@@ -25,6 +25,7 @@ class MyNavigationBar extends StatelessWidget {
       child: NavigationBar(
         height: height,
         indicatorColor: theme.primary,
+        surfaceTintColor: theme.background,
         backgroundColor: backgroundColor,
         indicatorShape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.horizontal(

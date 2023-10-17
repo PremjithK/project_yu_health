@@ -128,6 +128,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
 //! DATE PICKER
 class MyDateFormField extends StatefulWidget {
   const MyDateFormField({
+    required this.onTap,
     this.prefixIcon,
     super.key,
     this.hint,
@@ -139,7 +140,6 @@ class MyDateFormField extends StatefulWidget {
     this.filled = false,
     //Event Properties
     this.onChanged,
-    this.onTap,
   });
 
   final String? hint;

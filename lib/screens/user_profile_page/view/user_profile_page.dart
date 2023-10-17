@@ -15,7 +15,6 @@ class UserProfilePage extends StatelessWidget {
     //Config
     final theme = Theme.of(context).colorScheme;
 
-    //const Color(0xFF1156CE),
     return Scaffold(
       backgroundColor: theme.background,
       body: SafeArea(

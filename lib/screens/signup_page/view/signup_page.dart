@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -15,8 +16,6 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   //? Form Controllers
-  final TextEditingController _dateController = TextEditingController();
-  DateTime? selectedDate;
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -26,22 +25,32 @@ class _SignupPageState extends State<SignupPage> {
 
   final _formKey = GlobalKey<FormState>();
 
-  //Date
-  final firstDate = DateTime(1950);
-  final finalDate = DateTime(2500);
+  //DatePicker
+  final TextEditingController _dateController = TextEditingController();
+  DateTime? selectedDate;
 
+  final firstDate = DateTime(1900);
+  final finalDate = DateTime(3000);
+
+  //^ Date picker function
   Future<void> selectDate(BuildContext context) async {
-    final pickedDate = await showDatePicker(
+    final picked = await showDatePicker(
       context: context,
       initialDate: selectedDate ?? DateTime.now(),
       firstDate: firstDate,
       lastDate: finalDate,
+      fieldHintText: 'dd/mm/yyyy',
+      errorFormatText: 'Invalid date format',
+      errorInvalidText: 'Invalid date',
     );
-    if (pickedDate == null && pickedDate != selectedDate) {
+
+    if (picked != null && picked != selectedDate) {
+      final formattedDate = DateFormat('dd/MM/yyyy').format(picked);
       setState(() {
-        selectedDate = pickedDate;
-        _dateController.text = selectedDate.toString();
+        selectedDate = picked;
+        _dateController.text = formattedDate;
       });
+      print(DateTime.now().year - picked.year);
     }
   }
 
@@ -102,7 +111,7 @@ class _SignupPageState extends State<SignupPage> {
                       flex: 3,
                       child: MyDateFormField(
                         // enabled: false,
-                        onTap: () {},
+                        onTap: () => selectDate(context),
                         controller: _dateController,
                         keyboardType: TextInputType.datetime,
                         prefixIcon: const Icon(Icons.edit_calendar_sharp),
@@ -110,23 +119,6 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                     ),
                     widthspace(5),
-                    // Flexible(
-                    //   flex: 1,
-                    //   child: MySecondaryButton(
-                    //     label: 'Date',
-                    //     onPressed: () {
-                    //       // showDatePicker(
-                    //       //   context: context,
-                    //       //   initialDate: DateTime.now(),
-                    //       //   firstDate: firstDate,
-                    //       //   lastDate: finalDate,
-                    //       // ).then((value) {
-                    //       //   //
-                    //       //   _dateController.text = '${value!.day}/${value.month}/${value.year}';
-                    //       // });
-                    //     },
-                    //   ),
-                    // ),
                   ],
                 ),
                 heightspace(10),
