@@ -47,7 +47,9 @@ class MyLabel extends StatelessWidget {
     this.color,
     this.weight = FontWeight.normal,
     this.maxLines = 1,
+    this.fontFamily,
     this.textAlign = TextAlign.left,
+    this.height,
     super.key,
   });
   final String text;
@@ -57,18 +59,20 @@ class MyLabel extends StatelessWidget {
   final double? letterSpacing;
   final int maxLines;
   final TextAlign textAlign;
+  final String? fontFamily;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: 'RedHat',
+        fontFamily: fontFamily ?? secondaryFont,
         fontSize: size,
         fontWeight: weight,
         color: color,
         letterSpacing: letterSpacing,
-        height: 1.2,
+        height: height ?? 1.2,
       ),
       textAlign: textAlign,
       maxLines: maxLines,

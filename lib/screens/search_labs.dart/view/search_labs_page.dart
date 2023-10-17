@@ -4,6 +4,35 @@ import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/yu_search_bar.dart';
 
+class Lab {
+  Lab({
+    required this.open,
+    required this.name,
+    required this.city,
+    required this.imageURL,
+    required this.phoneNumber,
+    required this.testsList,
+  });
+
+  final bool open;
+  final String name;
+  final String city;
+  final String phoneNumber;
+  final String imageURL;
+  final List<String> testsList;
+}
+
+final labsList = <Lab>[
+  Lab(
+    open: true,
+    name: 'BML Labs Pvt Ltd',
+    city: 'London',
+    imageURL: 'https://britishmedicallab.com/wp-content/uploads/2017/03/bml-lab-dayJPG.jpg',
+    phoneNumber: '295-859',
+    testsList: ['covid-19', 'THS', 'X-RAY', 'CBC'],
+  ),
+];
+
 class SearchLabsPage extends StatelessWidget {
   const SearchLabsPage({super.key});
 
@@ -34,18 +63,22 @@ class SearchLabsPage extends StatelessWidget {
               hint: 'Search by name or location',
             ),
           ),
-
+          heightspace(10),
           // ListView
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               shrinkWrap: true,
-              itemCount: 2,
+              itemCount: labsList.length,
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return LabSearchResult(
-                  name: 'BML Labs',
-                  phoneNumber: '2343420',
-                  imageURL: '',
+                  name: labsList[index].name,
+                  open: labsList[index].open,
+                  city: labsList[index].city,
+                  testsList: labsList[index].testsList,
+                  phoneNumber: labsList[index].phoneNumber,
+                  imageURL: labsList[index].imageURL,
                 );
               },
             ),

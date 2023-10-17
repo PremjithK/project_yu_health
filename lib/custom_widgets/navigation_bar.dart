@@ -29,8 +29,8 @@ class MyNavigationBar extends StatelessWidget {
         backgroundColor: backgroundColor,
         indicatorShape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.horizontal(
-            left: Radius.circular(10),
-            right: Radius.circular(10),
+            left: Radius.circular(15),
+            right: Radius.circular(15),
           ),
         ),
         destinations: [
@@ -41,7 +41,7 @@ class MyNavigationBar extends StatelessWidget {
             ),
             selectedIcon: Icon(
               FontAwesomeIcons.house,
-              color: theme.background,
+              color: theme.onPrimary,
               size: commonIconSize,
             ),
             label: 'Home',
@@ -53,7 +53,7 @@ class MyNavigationBar extends StatelessWidget {
             ),
             selectedIcon: Icon(
               FontAwesomeIcons.stethoscope,
-              color: theme.background,
+              color: theme.onPrimary,
               size: commonIconSize,
             ),
             label: 'Doctors',
@@ -65,7 +65,7 @@ class MyNavigationBar extends StatelessWidget {
             ),
             selectedIcon: Icon(
               FontAwesomeIcons.flaskVial,
-              color: theme.background,
+              color: theme.onPrimary,
               size: commonIconSize,
             ),
             label: 'Labs',
@@ -77,7 +77,7 @@ class MyNavigationBar extends StatelessWidget {
             ),
             selectedIcon: Icon(
               Icons.person,
-              color: theme.background,
+              color: theme.onPrimary,
               size: commonIconSize + 10,
             ),
             label: 'Profile',

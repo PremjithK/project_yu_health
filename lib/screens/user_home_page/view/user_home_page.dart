@@ -38,14 +38,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: theme.background,
       body: _pages[_selectedtIndex],
-      // Nav
+      //? NAVIGATION BAR
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: theme.primary.withOpacity(0.15),
+            ),
+          ),
           color: theme.background,
           boxShadow: [
             BoxShadow(
-              color: theme.onBackground.withOpacity(0.15),
-              blurRadius: 10,
+              color: theme.onBackground.withOpacity(0.25),
+              blurRadius: 7,
             ),
           ],
         ),

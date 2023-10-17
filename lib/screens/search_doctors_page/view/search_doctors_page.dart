@@ -121,6 +121,7 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
             //! Doctors Search Results GridView
             Expanded(
               child: GridView.builder(
+                physics: const BouncingScrollPhysics(),
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 itemCount: filteredDoctors.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
