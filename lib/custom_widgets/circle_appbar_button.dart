@@ -22,7 +22,7 @@ class CircleAppbarButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(60),
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(size / 2.5),
+        padding: EdgeInsets.all(size / 2.0),
         decoration: BoxDecoration(
           color: theme.background,
           // boxShadow: [

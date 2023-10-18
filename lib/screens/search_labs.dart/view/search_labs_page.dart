@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/lab_search_result.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -48,7 +49,7 @@ class SearchLabsPage extends StatelessWidget {
               children: [
                 MyHeading(
                   text: 'Search Labs',
-                  size: TextSizes.h3,
+                  size: TextSizes.pageTitle,
                   letterSpacing: -1,
                 ),
               ],

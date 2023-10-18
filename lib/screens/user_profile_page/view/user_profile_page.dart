@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/profile_picture_large.dart';
 import 'package:yu_health/custom_widgets/profile_text_fields.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
@@ -24,7 +25,7 @@ class UserProfilePage extends StatelessWidget {
           children: [
             MyHeading(
               text: 'My Profile',
-              size: TextSizes.h3,
+              size: TextSizes.pageTitle,
               letterSpacing: -0.5,
             ),
             heightspace(25),

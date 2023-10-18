@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -8,7 +9,7 @@ import 'package:yu_health/custom_widgets/text_fields.dart';
 import 'package:yu_health/screens/login_page/view/login_page.dart';
 
 class SignupPage extends StatefulWidget {
-  SignupPage({super.key});
+  const SignupPage({super.key});
 
   @override
   State<SignupPage> createState() => _SignupPageState();
@@ -24,6 +25,7 @@ class _SignupPageState extends State<SignupPage> {
   final TextEditingController _passwordConfirmController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
+  String selectedGender = 'M';
 
   //DatePicker
   final TextEditingController _dateController = TextEditingController();
@@ -52,6 +54,8 @@ class _SignupPageState extends State<SignupPage> {
       });
       print(DateTime.now().year - picked.year);
     }
+
+    // Gender Selection
   }
 
   @override
@@ -66,9 +70,10 @@ class _SignupPageState extends State<SignupPage> {
           key: _formKey,
           child: Center(
             child: ListView(
+              shrinkWrap: true,
               padding: const EdgeInsets.symmetric(horizontal: 30),
               children: [
-                heightspace(60),
+                heightspace(30),
                 const MyHeading(
                   text: 'Join YuHealth',
                   textAlign: TextAlign.center,
@@ -121,8 +126,38 @@ class _SignupPageState extends State<SignupPage> {
                     widthspace(5),
                   ],
                 ),
+                //
+                heightspace(10),
+
+                //! Segmented Button to pick gender
+                SegmentedButton<String>(
+                  segments: const [
+                    ButtonSegment(
+                      value: 'M',
+                      icon: Icon(Icons.male),
+                      label: MyLabel(
+                        text: 'MALE',
+                        weight: FontWeight.w600,
+                      ),
+                    ),
+                    ButtonSegment(
+                      value: 'F',
+                      icon: Icon(Icons.female),
+                      label: MyLabel(
+                        text: 'FEMALE',
+                        weight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                  selected: <String>{selectedGender},
+                  onSelectionChanged: (Set<String> gender) {
+                    print(gender.first);
+                  },
+                ),
+
                 heightspace(10),
                 const Divider(),
+                // Contact Fields
                 heightspace(10),
                 MyTextFormField(
                   controller: _emailController,

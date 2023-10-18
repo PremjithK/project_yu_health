@@ -40,7 +40,6 @@ class LoginPage extends StatelessWidget {
                         children: [
                           const MyHeading(
                             text: 'Log In',
-                            weight: FontWeight.w800,
                             textAlign: TextAlign.center,
                             letterSpacing: -1,
                           ),

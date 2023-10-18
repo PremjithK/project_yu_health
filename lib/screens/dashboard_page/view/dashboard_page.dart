@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/dashboard_circle_option.dart';
 import 'package:yu_health/custom_widgets/dashboard_long_option.dart';
 import 'package:yu_health/custom_widgets/image_banner_card.dart';

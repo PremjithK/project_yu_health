@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/doctor_search_result_card.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -105,7 +106,7 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
                     heightspace(15),
                     MyHeading(
                       text: 'Search Doctors',
-                      size: TextSizes.h3,
+                      size: TextSizes.pageTitle,
                       letterSpacing: -1,
                     ),
                     heightspace(10),

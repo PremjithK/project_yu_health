@@ -10,6 +10,7 @@ class MyHeading extends StatelessWidget {
     this.letterSpacing = 0,
     this.weight = FontWeight.w800,
     this.textAlign,
+    this.height,
     super.key,
   });
 
@@ -18,6 +19,7 @@ class MyHeading extends StatelessWidget {
   final FontWeight weight;
   final double letterSpacing;
   final double? size;
+  final double? height;
   final TextAlign? textAlign;
 
   @override
@@ -30,7 +32,7 @@ class MyHeading extends StatelessWidget {
         fontSize: size,
         fontFamily: primaryFont,
         letterSpacing: letterSpacing,
-        height: 1,
+        height: height ?? 1,
         fontWeight: weight,
         color:
             (color == null) ? Theme.of(context).colorScheme.onBackground.withOpacity(0.9) : color,
@@ -78,20 +80,4 @@ class MyLabel extends StatelessWidget {
       maxLines: maxLines,
     );
   }
-}
-
-// Common text sizes
-class TextSizes {
-  // Headings
-  static double get h1 => 40;
-  static double get h2 => 35;
-  static double get h3 => 30;
-  static double get h4 => 25;
-  static double get h5 => 20;
-  static double get h6 => 18;
-
-  // Body
-  static double get b1 => 16;
-  static double get b2 => 14;
-  static double get b3 => 12;
 }

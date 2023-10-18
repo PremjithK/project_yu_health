@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
-import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 const double fontSize = 16;

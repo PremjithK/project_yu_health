@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yu_health/custom_widgets/text.dart';
+import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
 // Common features
@@ -143,6 +143,44 @@ class MyPrimaryButtonWithIcon extends StatelessWidget {
     //Required
     required this.icon,
     required this.label,
+    this.onPressed,
+    // Optional
+    super.key,
+  });
+  final Widget icon;
+  final void Function()? onPressed;
+  final String label;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton.icon(
+      onPressed: onPressed,
+      icon: icon,
+      label: Text(label),
+      style: TextButton.styleFrom(
+        disabledForegroundColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.75),
+        disabledBackgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        textStyle: TextStyle(
+          fontFamily: font,
+          fontWeight: FontWeight.w800,
+          fontSize: fontSize,
+        ),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        elevation: elev,
+        shape: RoundedRectangleBorder(
+          //side: BorderSide(color: Colors.transparent),
+          borderRadius: BorderRadius.circular(mainBorderRadius),
+        ),
+      ),
+    );
+  }
+}
+
+class MySecondaryButtonWithIcon extends StatelessWidget {
+  const MySecondaryButtonWithIcon({
+    //Required
+    required this.icon,
+    required this.label,
     required this.onPressed,
     // Optional
     super.key,
@@ -157,22 +195,18 @@ class MyPrimaryButtonWithIcon extends StatelessWidget {
       icon: icon,
       label: Text(label),
       style: TextButton.styleFrom(
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        foregroundColor: Theme.of(context).colorScheme.onBackground,
         textStyle: TextStyle(
           fontFamily: font,
           fontWeight: FontWeight.w800,
           fontSize: fontSize,
         ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        padding: EdgeInsets.symmetric(
-          horizontal: elevatedButtonPadding + 5,
-          vertical: elevatedButtonPadding,
-        ),
+        backgroundColor: Theme.of(context).colorScheme.background,
         elevation: elev,
         shape: RoundedRectangleBorder(
-          // side: BorderSide(
-          //   color: Theme.of(context).colorScheme.onPrimary,
-          // ),
+          side: BorderSide(
+            color: Theme.of(context).colorScheme.onBackground.withOpacity(0.25),
+          ),
           borderRadius: BorderRadius.circular(mainBorderRadius),
         ),
       ),
