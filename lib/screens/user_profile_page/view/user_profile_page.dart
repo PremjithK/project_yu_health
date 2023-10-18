@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yu_health/custom_widgets/profile_picture._editable.dart';
+import 'package:yu_health/custom_widgets/profile_picture_large.dart';
 import 'package:yu_health/custom_widgets/profile_text_fields.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -19,7 +19,7 @@ class UserProfilePage extends StatelessWidget {
       backgroundColor: theme.background,
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             MyHeading(
@@ -29,11 +29,13 @@ class UserProfilePage extends StatelessWidget {
             ),
             heightspace(25),
             // Profile Picture and change button
-            Center(
-              child: ProfilePictureEditable(
+            const Center(
+              child: ProfilePictureLarge(
+                isEditable: true,
                 imageURL: imageURL,
-                height: 200,
-                width: 200,
+                height: 275,
+                primaryText: 'John Smith Jr.',
+                secondaryText: '27-M',
               ),
             ),
             // Information

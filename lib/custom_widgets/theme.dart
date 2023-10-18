@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 //? Custom Fonts
 const String primaryFont = 'Wix';
 const String secondaryFont = 'RedHat';
+const String monospacedFont = 'OxygenMono';
 
 // Text Theme
 const myTextTheme = TextTheme(
-  labelSmall: TextStyle(
+  labelMedium: TextStyle(
     fontSize: 12,
     letterSpacing: 0,
     fontWeight: FontWeight.w600,
-    fontFamily: secondaryFont,
+    fontFamily: primaryFont,
   ),
 );
 ///////////////////////////////////////////////

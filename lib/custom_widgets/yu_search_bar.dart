@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
-double borderRadius = 55;
+double borderRadius = 15;
 double borderWidth = 1;
 
 class MySearchBar extends StatelessWidget {
@@ -25,13 +25,13 @@ class MySearchBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
-        boxShadow: [
-          // BoxShadow(
-          //   color: theme.onBackground.withOpacity(0.1),
-          //   blurRadius: 5,
-          //   spreadRadius: 2,
-          // ),
-        ],
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: theme.onBackground.withOpacity(0.1),
+        //     blurRadius: 5,
+        //     spreadRadius: 2,
+        //   ),
+        // ],
       ),
       child: TextFormField(
         controller: controller,
@@ -77,7 +77,7 @@ class MySearchBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius),
           ),
 
-          // Icon
+          // Iconki
           prefixIcon: Row(
             mainAxisSize: MainAxisSize.min,
             children: [

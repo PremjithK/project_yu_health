@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:yu_health/custom_widgets/doctor_search_result_card.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/yu_search_bar.dart';
+import 'package:yu_health/screens/book_doctors_page/book_doctor_page.dart';
 
 class Doctor {
   Doctor({
@@ -137,6 +139,7 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
                     clinic: filteredDoctors[index].clinic,
                     imageURL: filteredDoctors[index].imageURL,
                     onTap: () {
+                      Get.to(const BookDoctorPage());
                       print('Clicked Card');
                     },
                   );
