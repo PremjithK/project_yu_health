@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/lab_search_result.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/yu_search_bar.dart';
+import 'package:yu_health/screens/book_labs_page/view/book_labs_page.dart';
 
 class Lab {
   Lab({
@@ -74,6 +76,7 @@ class SearchLabsPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return LabSearchResult(
+                  onTap: () => Get.to(() => BookLabsPage()),
                   name: labsList[index].name,
                   open: labsList[index].open,
                   city: labsList[index].city,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/circle_appbar_button.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
@@ -10,18 +9,20 @@ class MyAppBar extends StatelessWidget {
     required this.title,
     required this.showBackButton,
     this.actionButtons,
-    this.margin = 10,
+    this.margin,
     super.key,
   });
-  final double margin;
+  final EdgeInsetsGeometry? margin;
   final String title;
   final bool showBackButton;
   final List<CircleAppbarButton>? actionButtons;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: margin),
+    final theme = Theme.of(context).colorScheme;
+
+    return Container(
+      padding: margin ?? const EdgeInsets.symmetric(vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -30,15 +31,15 @@ class MyAppBar extends StatelessWidget {
             children: [
               if (showBackButton)
                 CircleAppbarButton(
-                  size: 16,
-                  icon: Icons.arrow_back_ios_new,
+                  size: 25,
+                  icon: Icons.arrow_back,
                   onTap: () {},
                 )
               else
                 const SizedBox(),
-              widthspace(10),
+              widthspace(5),
               MyHeading(
-                text: 'Consult this doctor',
+                text: title,
                 size: TextSizes.pageTitle,
                 letterSpacing: -1,
               ),
@@ -50,7 +51,7 @@ class MyAppBar extends StatelessWidget {
               children: actionButtons!,
             )
           else
-            SizedBox(),
+            const SizedBox(),
         ],
       ),
     );

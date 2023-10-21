@@ -5,7 +5,7 @@ import 'package:yu_health/custom_widgets/theme.dart';
 
 const double fontSize = 16;
 const double borderRadius = 55;
-const double textFormFieldHorizontalPadding = 15;
+const double textFormFieldPadding = 10;
 
 class MyTextFormField extends StatefulWidget {
   const MyTextFormField({
@@ -118,7 +118,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
         prefixIcon: (widget.prefixIcon != null) ? widthspace(60, widget.prefixIcon) : null,
         prefix: (widget.prefixIcon != null) ? widthspace(0) : widthspace(10),
         suffix: widthspace(10),
-        contentPadding: const EdgeInsets.all(textFormFieldHorizontalPadding),
+        contentPadding: const EdgeInsets.all(textFormFieldPadding),
       ),
     );
   }
@@ -246,7 +246,7 @@ class _MyDateFormFieldState extends State<MyDateFormField> {
         prefixIcon: (widget.prefixIcon != null) ? widthspace(60, widget.prefixIcon) : null,
         prefix: (widget.prefixIcon != null) ? widthspace(0) : widthspace(10),
         suffix: widthspace(10),
-        contentPadding: const EdgeInsets.all(textFormFieldHorizontalPadding),
+        contentPadding: const EdgeInsets.all(textFormFieldPadding),
       ),
     );
   }

@@ -10,11 +10,13 @@ class MyHeading extends StatelessWidget {
     this.letterSpacing = 0,
     this.weight = FontWeight.w800,
     this.textAlign,
+    this.fontFamily,
     this.height,
     super.key,
   });
 
   final String text;
+  final String? fontFamily;
   final Color? color;
   final FontWeight weight;
   final double letterSpacing;
@@ -30,7 +32,7 @@ class MyHeading extends StatelessWidget {
       textAlign: textAlign,
       style: TextStyle(
         fontSize: size,
-        fontFamily: primaryFont,
+        fontFamily: fontFamily ?? primaryFont,
         letterSpacing: letterSpacing,
         height: height ?? 1,
         fontWeight: weight,
@@ -45,10 +47,10 @@ class MyLabel extends StatelessWidget {
   const MyLabel({
     required this.text,
     this.letterSpacing,
-    this.size = 12,
+    this.size = 14,
     this.color,
     this.weight = FontWeight.normal,
-    this.maxLines = 1,
+    this.maxLines = 2,
     this.fontFamily,
     this.textAlign = TextAlign.left,
     this.height,

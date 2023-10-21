@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yu_health/config/text_sizes.dart';
+import 'package:yu_health/config/ui_sizes.dart';
 import 'package:yu_health/custom_widgets/doctor_search_result_card.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -99,17 +100,21 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
             ColoredBox(
               color: theme.colorScheme.background,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: globalScreenPaddingX),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     heightspace(15),
+
+                    //& Header
                     MyHeading(
                       text: 'Search Doctors',
                       size: TextSizes.pageTitle,
                       letterSpacing: -1,
                     ),
                     heightspace(10),
+
+                    //& Searchbar
                     MySearchBar(
                       onChanged: filterDoctors,
                       controller: _searchController,
@@ -121,11 +126,11 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
               ),
             ),
 
-            //! Doctors Search Results GridView
+            //& Doctors Search Results Grid
             Expanded(
               child: GridView.builder(
                 physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: globalScreenPaddingX),
                 itemCount: filteredDoctors.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -140,7 +145,7 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
                     clinic: filteredDoctors[index].clinic,
                     imageURL: filteredDoctors[index].imageURL,
                     onTap: () {
-                      Get.to(const BookDoctorPage());
+                      Get.to<Widget>(() => const BookDoctorPage());
                       print('Clicked Card');
                     },
                   );

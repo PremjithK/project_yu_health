@@ -5,7 +5,7 @@ import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/text_fields.dart';
 import 'package:yu_health/screens/signup_page/view/signup_page.dart';
-import 'package:yu_health/screens/user_home_page/view/user_home_page.dart';
+import 'package:yu_health/screens/home_page/view/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
 import 'package:yu_health/config/text_sizes.dart';
+import 'package:yu_health/config/ui_sizes.dart';
 import 'package:yu_health/custom_widgets/dashboard_circle_option.dart';
-import 'package:yu_health/custom_widgets/dashboard_long_option.dart';
 import 'package:yu_health/custom_widgets/image_banner_card.dart';
 import 'package:yu_health/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
-import 'package:yu_health/screens/search_doctors_page/view/search_doctors_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -24,11 +22,10 @@ class _DashboardPageState extends State<DashboardPage> {
     //UI
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: globalScreenPaddingX),
         child: ListView(
-          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header Section
+            //& Banner Image
             heightspace(20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,8 +41,9 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                     MyHeading(
                       text: 'YuHealth.',
+                      letterSpacing: -1,
                       color: theme.primary,
-                      size: TextSizes.h4,
+                      size: TextSizes.h3,
                     ),
                   ],
                 ),
@@ -61,35 +59,20 @@ class _DashboardPageState extends State<DashboardPage> {
               subTitle: 'Consult with a doctor via Video Call',
               imageURL: 'assets/images/doctor_with_pc.jpg',
             ),
-            heightspace(16),
-            //Dashboard Options
-            DashboardLongOption(
-              onTap: () {},
-              title: 'Book Doctors Appointment',
-              subTitle: 'Book an offline appointment with a doctor near you',
-              icon: Icon(
-                FontAwesomeIcons.handshake,
-                color: theme.onPrimaryContainer,
-                size: 21,
-              ),
-              color: theme.onBackground,
+            heightspace(20),
+            //& User Acctivity/ History
+            MyHeading(
+              text: 'History',
+              size: TextSizes.h3,
+              letterSpacing: -1,
             ),
-            heightspace(8),
-            DashboardLongOption(
-              onTap: () {},
-              title: 'Book Lab Appointment',
-              subTitle: 'Book Lab Tests In A Lab Near You',
-              icon: Icon(
-                FontAwesomeIcons.flask,
-                color: theme.onPrimaryContainer,
-                size: 21,
-              ),
-              color: theme.onBackground,
-            ),
+            const Divider(),
+            const MyLabel(text: 'You have no recent activity.'),
+            // Activity history goes here
             heightspace(20),
 
             //& Circle Options
-            const Spacer(),
+            //const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -100,26 +83,21 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
                 DashboardCircleOption(
                   onTap: () {},
-                  icon: FontAwesomeIcons.fileMedical,
+                  icon: FontAwesomeIcons.fileInvoice,
                   caption: 'My Prescriptions',
                 ),
                 DashboardCircleOption(
-                  onTap: () {
-                    Get.to<Widget>(const SearchDoctorsPage());
-                  },
-                  icon: FontAwesomeIcons.userDoctor,
-                  caption: 'Search Doctors',
+                  onTap: () {},
+                  icon: FontAwesomeIcons.wallet,
+                  caption: 'Payment History',
                 ),
                 DashboardCircleOption(
                   onTap: () {},
                   icon: FontAwesomeIcons.kitMedical,
-                  caption: 'Emergency Services',
+                  caption: 'More Services',
                 ),
               ],
             ),
-            heightspace(10),
-
-            //^ end
           ],
         ),
       ),

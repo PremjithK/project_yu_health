@@ -19,10 +19,12 @@ class CircleAppbarButton extends StatelessWidget {
     // UI
     return InkWell(
       splashColor: theme.primary,
+      highlightColor: theme.primary,
+      focusColor: theme.primary,
       borderRadius: BorderRadius.circular(60),
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(size / 2.0),
+        padding: EdgeInsets.all(size / 3),
         decoration: BoxDecoration(
           color: theme.background,
           // boxShadow: [
@@ -31,9 +33,9 @@ class CircleAppbarButton extends StatelessWidget {
           //     color: theme.onBackground.withOpacity(0.25),
           //   ),
           // ],
-          border: Border.all(
-            color: theme.onBackground.withOpacity(0.2),
-          ),
+          // border: Border.all(
+          //   color: theme.onBackground.withOpacity(0.2),
+          // ),
           shape: BoxShape.circle,
         ),
         child: Icon(

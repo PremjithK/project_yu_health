@@ -1,4 +1,8 @@
 // Common Global UI Sizes
-const globalPagePaddingX = 15;
-const globalPagePaddingY = 5;
-const globalContainerBorderRadius = 15;
+
+const double globalScreenPaddingX = 20;
+const double globalInnerScreenPaddingX = 30;
+const double globalPagePaddingY = 5;
+
+const double appBarMarginX = 10;
+const double globalContainerBorderRadius = 15;

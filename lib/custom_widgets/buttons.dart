@@ -186,7 +186,7 @@ class MySecondaryButtonWithIcon extends StatelessWidget {
     super.key,
   });
   final Widget icon;
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final String label;
   @override
   Widget build(BuildContext context) {
