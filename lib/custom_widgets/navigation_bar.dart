@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-const double commonIconSize = 20;
+const double commonIconSize = 18;
 
 class MyNavigationBar extends StatelessWidget {
   const MyNavigationBar({
     required this.selectedIndex,
     required this.onDestinationSelected,
     this.backgroundColor = Colors.transparent,
-    this.height = 65,
+    this.height = 60,
     super.key,
   });
 
@@ -23,14 +23,15 @@ class MyNavigationBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: NavigationBar(
+        animationDuration: const Duration(milliseconds: 500),
         height: height,
         indicatorColor: theme.primary,
         surfaceTintColor: theme.background,
         backgroundColor: backgroundColor,
         indicatorShape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.horizontal(
-            left: Radius.circular(15),
-            right: Radius.circular(15),
+            left: Radius.circular(20),
+            right: Radius.circular(20),
           ),
         ),
         destinations: [
@@ -73,12 +74,12 @@ class MyNavigationBar extends StatelessWidget {
           NavigationDestination(
             icon: const Icon(
               Icons.person,
-              size: commonIconSize + 10,
+              size: commonIconSize + 8,
             ),
             selectedIcon: Icon(
               Icons.person,
               color: theme.onPrimary,
-              size: commonIconSize + 10,
+              size: commonIconSize + 8,
             ),
             label: 'Profile',
           ),

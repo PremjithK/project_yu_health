@@ -47,11 +47,11 @@ class _ProfilePictureLargeState extends State<ProfilePictureLarge> {
         // Edit Button
         if (widget.isEditable)
           Positioned(
-            bottom: 10,
-            right: 10,
-            child: MyPrimaryButtonWithIcon(
+            bottom: 5,
+            right: 5,
+            child: MySecondaryButtonWithIcon(
               label: 'Edit',
-              icon: Icon(Icons.change_circle),
+              icon: const Icon(Icons.edit),
               onPressed: () {},
             ),
           ),

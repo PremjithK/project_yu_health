@@ -7,6 +7,7 @@ import 'package:yu_health/custom_widgets/image_banner_card.dart';
 import 'package:yu_health/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
+import 'package:yu_health/custom_widgets/theme.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -35,7 +36,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   children: [
                     MyHeading(
                       text: 'Dave Smith',
-                      letterSpacing: -0.5,
+                      fontFamily: secondaryFont,
                       size: TextSizes.h6,
                       weight: FontWeight.w600,
                     ),
@@ -43,7 +44,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       text: 'YuHealth.',
                       letterSpacing: -1,
                       color: theme.primary,
-                      size: TextSizes.h3,
+                      size: TextSizes.h4,
                     ),
                   ],
                 ),

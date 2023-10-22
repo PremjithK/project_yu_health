@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/theme.dart';
 
@@ -22,7 +23,6 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
     return SizedBox(
-      //color: Colors.red,
       width: 75,
       height: 110,
       child: Column(
@@ -34,26 +34,21 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
             color: Colors.transparent,
             child: InkWell(
               onTap: widget.onTap,
-              onTapDown: (details) {
-                // setState(() {});
-              },
+              onTapDown: (details) {},
               //
               // focusColor: theme.secondaryContainer,
-              // highlightColor: theme.secondaryContainer,
-              // splashColor: theme.secondaryContainer,
+              highlightColor: theme.primary,
+              splashColor: theme.primary,
               child: Ink(
                 height: 70,
                 padding: const EdgeInsets.all(18),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: theme.secondaryContainer,
-                  border: Border.all(
-                    color: theme.onSecondaryContainer.withOpacity(0.1),
-                  ),
+                  color: theme.primaryContainer,
                 ),
                 child: Icon(
                   widget.icon,
-                  color: theme.onSecondaryContainer,
+                  color: theme.onPrimaryContainer,
                   size: 25,
                 ),
               ),
@@ -63,10 +58,10 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
           Text(
             widget.caption,
             style: TextStyle(
-              fontSize: 11,
+              fontSize: TextSizes.b3,
               fontFamily: secondaryFont,
               fontWeight: FontWeight.w600,
-              color: theme.onSecondaryContainer,
+              color: theme.onPrimaryContainer,
               height: 1.1,
             ),
             overflow: TextOverflow.ellipsis,

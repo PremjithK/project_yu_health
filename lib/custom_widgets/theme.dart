@@ -6,15 +6,6 @@ const String primaryFont = 'Wix';
 const String secondaryFont = 'RedHat';
 const String monospacedFont = 'OxygenMono';
 
-// Text Theme
-const myTextTheme = TextTheme(
-  labelMedium: TextStyle(
-    fontSize: 12,
-    letterSpacing: 0,
-    fontWeight: FontWeight.w600,
-    fontFamily: primaryFont,
-  ),
-);
 ///////////////////////////////////////////////
 // Color Scheme
 const lightColorScheme = ColorScheme(
@@ -84,30 +75,25 @@ const darkColorScheme = ColorScheme(
   outlineVariant: Color(0xFF45464F),
   scrim: Color(0xFF000000),
 );
-
-// Theme Data Variables
-ThemeData lightTheme = ThemeData.from(
-  useMaterial3: true,
-  textTheme: myTextTheme,
-  colorScheme: lightColorScheme,
-);
-ThemeData darkTheme = ThemeData.from(
-  useMaterial3: true,
-  textTheme: myTextTheme,
-  colorScheme: darkColorScheme,
+// Text Theme
+const myTextTheme = TextTheme(
+  labelMedium: TextStyle(
+    fontSize: 12,
+    letterSpacing: 0,
+    fontWeight: FontWeight.w600,
+    fontFamily: primaryFont,
+  ),
 );
 
-ThemeData darkTheme2 = ThemeData(
-  useMaterial3: true,
-  appBarTheme: yuAppBarTheme,
-  colorScheme: darkColorScheme,
-  textTheme: myTextTheme,
-);
-ThemeData lightTheme2 = ThemeData(
-  useMaterial3: true,
-  appBarTheme: yuAppBarTheme,
-  colorScheme: lightColorScheme,
-  textTheme: myTextTheme,
+TooltipThemeData tooltipTheme = TooltipThemeData(
+  decoration: BoxDecoration(
+    color: Colors.grey.shade800,
+    borderRadius: BorderRadius.circular(15),
+  ),
+  textStyle: const TextStyle(
+    color: Colors.white,
+    fontFamily: primaryFont,
+  ),
 );
 
 AppBarTheme yuAppBarTheme = AppBarTheme(
@@ -126,4 +112,20 @@ AppBarTheme yuAppBarTheme = AppBarTheme(
     weight: 800,
   ),
   titleSpacing: 10,
+);
+
+//& Theme Data variables
+ThemeData darkTheme = ThemeData(
+  useMaterial3: true,
+  appBarTheme: yuAppBarTheme,
+  colorScheme: darkColorScheme,
+  textTheme: myTextTheme,
+  tooltipTheme: tooltipTheme,
+);
+ThemeData lightTheme = ThemeData(
+  useMaterial3: true,
+  appBarTheme: yuAppBarTheme,
+  colorScheme: lightColorScheme,
+  textTheme: myTextTheme,
+  tooltipTheme: tooltipTheme,
 );

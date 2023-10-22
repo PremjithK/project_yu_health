@@ -19,12 +19,7 @@ class _ProfilePictureAvatarState extends State<ProfilePictureAvatar> {
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: theme.onPrimary,
-          ),
-        ),
+        decoration: const BoxDecoration(shape: BoxShape.circle),
         child: CircleAvatar(
           backgroundColor: theme.primary,
           minRadius: 22,

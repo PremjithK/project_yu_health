@@ -29,11 +29,8 @@ class DoctorSearchResultCard extends StatelessWidget {
           onTap: onTap,
           child: Ink(
             decoration: BoxDecoration(
-              color: theme.onBackground.withOpacity(0.05),
+              color: theme.onBackground.withOpacity(0.1),
               borderRadius: BorderRadius.circular(15),
-              border: Border.all(
-                color: theme.onPrimaryContainer.withOpacity(0.15),
-              ),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

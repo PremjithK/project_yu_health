@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/config/ui_sizes.dart';
+import 'package:yu_health/custom_widgets/buttons.dart';
+import 'package:yu_health/custom_widgets/caption_with_icon.dart';
 import 'package:yu_health/custom_widgets/profile_picture_large.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -14,45 +16,76 @@ class UserProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Config
     final theme = Theme.of(context).colorScheme;
 
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 20,
         automaticallyImplyLeading: false,
         scrolledUnderElevation: 2,
         title: Text(
           'My Profile',
           style: TextStyle(color: theme.onBackground),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.logout),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.settings),
+          ),
+          widthspace(10),
+        ],
       ),
       backgroundColor: theme.background,
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: globalScreenPaddingX, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: globalInnerScreenPaddingX, vertical: 15),
           children: [
-            heightspace(25),
             //& Profile Picture with Edit button
             const Center(
               child: ProfilePictureLarge(
                 isEditable: true,
                 imageURL: imageURL,
-                width: 250,
-                height: 250,
+                width: 200,
+                height: 200,
               ),
             ),
             //& User Information
-            heightspace(15),
-            MyHeading(
-              text: 'Dave Smith',
-              size: TextSizes.h3,
-              fontFamily: secondaryFont,
-              letterSpacing: -1,
+            heightspace(30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                MyLabel(
+                  text: 'Personal Info',
+                  weight: FontWeight.w500,
+                  fontFamily: secondaryFont,
+                  letterSpacing: -0.5,
+                  size: TextSizes.h6,
+                ),
+                MyLabel(
+                  text: 'Edit',
+                  weight: FontWeight.w500,
+                  fontFamily: secondaryFont,
+                  color: theme.primary,
+                  letterSpacing: -0.5,
+                  size: TextSizes.b1,
+                ),
+              ],
             ),
-            MyLabel(
-              text: '30 MALE',
-              size: TextSizes.b1,
-              letterSpacing: 1,
+            heightspace(10),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              decoration: BoxDecoration(
+                color: theme.onBackground.withOpacity(0.15),
+                borderRadius: BorderRadius.circular(globalContainerBorderRadius),
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [],
+              ),
             ),
           ],
         ),

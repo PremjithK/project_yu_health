@@ -34,23 +34,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
 
-    //? UI
     return Scaffold(
       backgroundColor: theme.background,
       body: _pages[_selectedtIndex],
-      //? NAVIGATION BAR
+      //& NAVIGATION BAR
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              color: theme.primary.withOpacity(0.15),
-            ),
-          ),
           color: theme.background,
           boxShadow: [
             BoxShadow(
-              color: theme.onBackground.withOpacity(0.25),
-              blurRadius: 7,
+              color: theme.onBackground.withOpacity(0.20),
+              blurRadius: 5,
             ),
           ],
         ),
