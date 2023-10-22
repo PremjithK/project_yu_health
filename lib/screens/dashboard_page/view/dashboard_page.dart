@@ -53,7 +53,7 @@ class _DashboardPageState extends State<DashboardPage> {
             heightspace(20),
             ImageBannerCard(
               onTap: () {
-                print("Clicked Banner");
+                print('Clicked Banner');
               },
               title: 'Consult Online',
               subTitle: 'Consult with a doctor via Video Call',

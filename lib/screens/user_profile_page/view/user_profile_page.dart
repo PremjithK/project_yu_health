@@ -18,16 +18,19 @@ class UserProfilePage extends StatelessWidget {
     final theme = Theme.of(context).colorScheme;
 
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        scrolledUnderElevation: 2,
+        title: Text(
+          'My Profile',
+          style: TextStyle(color: theme.onBackground),
+        ),
+      ),
       backgroundColor: theme.background,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: globalScreenPaddingX, vertical: 15),
           children: [
-            MyHeading(
-              text: 'About Me',
-              size: TextSizes.pageTitle,
-              letterSpacing: -0.5,
-            ),
             heightspace(25),
             //& Profile Picture with Edit button
             const Center(

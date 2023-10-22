@@ -22,7 +22,7 @@ class ProfilePictureLarge extends StatefulWidget {
 class _ProfilePictureLargeState extends State<ProfilePictureLarge> {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).colorScheme;
+    // final theme = Theme.of(context).colorScheme;
     //UI
     return Stack(
       alignment: Alignment.bottomCenter,

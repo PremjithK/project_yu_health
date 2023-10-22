@@ -3,10 +3,10 @@ import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/config/ui_sizes.dart';
 import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/caption_with_icon.dart';
-import 'package:yu_health/custom_widgets/my_app_bar.dart';
 import 'package:yu_health/custom_widgets/profile_picture_large.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
+import 'package:yu_health/custom_widgets/yu_search_bar.dart';
 
 class BookLabsPage extends StatefulWidget {
   const BookLabsPage({super.key});
@@ -16,27 +16,28 @@ class BookLabsPage extends StatefulWidget {
 }
 
 class _BookLabsPageState extends State<BookLabsPage> {
+  final testList = ['CBC', 'THS', 'CT'];
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Book Lab Tests',
+          style: TextStyle(color: theme.onBackground),
+        ),
+      ),
       backgroundColor: theme.background,
       body: SafeArea(
         child: Column(
           children: [
-            const MyAppBar(
-              title: 'Book Lab Tests',
-              showBackButton: true,
-              actionButtons: [],
-              margin: EdgeInsets.symmetric(vertical: 5, horizontal: appBarMarginX),
-            ),
             Expanded(
               child: ListView(
                 padding: const EdgeInsets.symmetric(horizontal: globalInnerScreenPaddingX),
                 shrinkWrap: true,
                 children: [
-                  //? Body
                   heightspace(10),
                   // Profile Picture section
                   const ProfilePictureLarge(
@@ -101,6 +102,45 @@ class _BookLabsPageState extends State<BookLabsPage> {
                       heightspace(10),
 
                       //& Tests / Scans List
+
+                      MyPrimaryButton(
+                        label: 'Select Lab Tests',
+                        onPressed: () {
+                          showDialog<Widget>(
+                            useSafeArea: true,
+                            barrierDismissible: true,
+                            context: context,
+                            builder: (context) {
+                              return Material(
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 5,
+                                    horizontal: globalScreenPaddingX,
+                                  ),
+                                  width: double.infinity,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      heightspace(15),
+                                      MyHeading(
+                                        text: 'Select Lab Tests',
+                                        size: TextSizes.h4,
+                                        letterSpacing: -1,
+                                      ),
+                                      heightspace(10),
+                                      MySearchBar(
+                                        controller: TextEditingController(),
+                                        onChanged: (query) {},
+                                      ),
+                                      heightspace(10),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
                     ],
                   ),
                   // End of List View
@@ -120,8 +160,10 @@ class _BookLabsPageState extends State<BookLabsPage> {
                 ],
               ),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: globalInnerScreenPaddingX, vertical: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: globalInnerScreenPaddingX,
+                  vertical: 5,
+                ),
                 child: Column(
                   children: [
                     MyLabel(

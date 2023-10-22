@@ -76,7 +76,7 @@ class SearchLabsPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return LabSearchResult(
-                  onTap: () => Get.to(() => BookLabsPage()),
+                  onTap: () => Get.to<Widget>(const BookLabsPage()),
                   name: labsList[index].name,
                   open: labsList[index].open,
                   city: labsList[index].city,

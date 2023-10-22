@@ -4,8 +4,8 @@ import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
 import 'package:yu_health/custom_widgets/text_fields.dart';
-import 'package:yu_health/screens/signup_page/view/signup_page.dart';
 import 'package:yu_health/screens/home_page/view/home_page.dart';
+import 'package:yu_health/screens/signup_page/view/signup_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -58,9 +58,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           heightspace(10),
                           MyTextFormField(
-                            onChanged: (value) {
-                              print(value);
-                            },
+                            onChanged: print,
                             controller: _passwordController,
                             validator: (value) {
                               if (value!.isEmpty) {
@@ -95,7 +93,7 @@ class LoginPage extends StatelessWidget {
                             width: double.infinity,
                             label: 'Create an account',
                             onPressed: () {
-                              Get.to<Widget>(SignupPage());
+                              Get.to<Widget>(const SignupPage());
                             },
                           ),
                         ],

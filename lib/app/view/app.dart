@@ -10,8 +10,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: lightTheme,
-      darkTheme: darkTheme,
+      theme: lightTheme2,
+      darkTheme: darkTheme2,
       //themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: AppLocalizations.localizationsDelegates,

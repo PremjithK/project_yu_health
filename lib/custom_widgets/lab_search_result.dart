@@ -31,16 +31,12 @@ class LabSearchResult extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).colorScheme;
     return InkWell(
+      borderRadius: BorderRadius.circular(15),
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 15),
-        // padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          border: Border.all(
-            color: theme.onBackground.withOpacity(0.15),
-          ),
           borderRadius: BorderRadius.circular(15),
-          color: theme.onBackground.withOpacity(0.05),
+          color: theme.onBackground.withOpacity(0.1),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

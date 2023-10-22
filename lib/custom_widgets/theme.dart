@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yu_health/config/text_sizes.dart';
 
 //? Custom Fonts
 const String primaryFont = 'Wix';
@@ -94,4 +95,35 @@ ThemeData darkTheme = ThemeData.from(
   useMaterial3: true,
   textTheme: myTextTheme,
   colorScheme: darkColorScheme,
+);
+
+ThemeData darkTheme2 = ThemeData(
+  useMaterial3: true,
+  appBarTheme: yuAppBarTheme,
+  colorScheme: darkColorScheme,
+  textTheme: myTextTheme,
+);
+ThemeData lightTheme2 = ThemeData(
+  useMaterial3: true,
+  appBarTheme: yuAppBarTheme,
+  colorScheme: lightColorScheme,
+  textTheme: myTextTheme,
+);
+
+AppBarTheme yuAppBarTheme = AppBarTheme(
+  titleTextStyle: TextStyle(
+    fontFamily: primaryFont,
+    fontSize: TextSizes.h4,
+    fontWeight: FontWeight.w800,
+    letterSpacing: -0.5,
+  ),
+  actionsIconTheme: const IconThemeData(
+    size: 25,
+    weight: 800,
+  ),
+  iconTheme: const IconThemeData(
+    size: 25,
+    weight: 800,
+  ),
+  titleSpacing: 10,
 );

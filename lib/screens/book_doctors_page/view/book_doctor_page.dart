@@ -3,7 +3,6 @@ import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/config/ui_sizes.dart';
 import 'package:yu_health/custom_widgets/buttons.dart';
 import 'package:yu_health/custom_widgets/caption_with_icon.dart';
-import 'package:yu_health/custom_widgets/my_app_bar.dart';
 import 'package:yu_health/custom_widgets/profile_picture_large.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -21,19 +20,16 @@ class _BookDoctorPageState extends State<BookDoctorPage> {
     final theme = Theme.of(context).colorScheme;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Consult Doctor',
+          style: TextStyle(color: theme.onBackground),
+        ),
+      ),
       backgroundColor: theme.background,
       body: SafeArea(
         child: Column(
           children: [
-            const MyAppBar(
-              title: 'Consult',
-              showBackButton: true,
-              actionButtons: [],
-              margin: EdgeInsets.symmetric(
-                vertical: globalPagePaddingY,
-                horizontal: appBarMarginX,
-              ),
-            ),
             Expanded(
               child: ListView(
                 padding: const EdgeInsets.symmetric(horizontal: globalInnerScreenPaddingX),
