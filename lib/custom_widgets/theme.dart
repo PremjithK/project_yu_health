@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/config/text_sizes.dart';
 
-//? Custom Fonts
+//! Custom Fonts
 const String primaryFont = 'Wix';
 const String secondaryFont = 'RedHat';
 const String monospacedFont = 'OxygenMono';
 
-///////////////////////////////////////////////
-// Color Scheme
+//& Color Scheme
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xFF1156CE),

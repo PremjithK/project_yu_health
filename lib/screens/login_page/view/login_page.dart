@@ -88,7 +88,6 @@ class LoginPage extends StatelessWidget {
                               }
                             },
                           ),
-                          heightspace(5),
                           MySecondaryButton(
                             width: double.infinity,
                             label: 'Create an account',

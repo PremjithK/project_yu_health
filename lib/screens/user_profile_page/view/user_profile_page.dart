@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/config/ui_sizes.dart';
-import 'package:yu_health/custom_widgets/buttons.dart';
-import 'package:yu_health/custom_widgets/caption_with_icon.dart';
 import 'package:yu_health/custom_widgets/profile_picture_large.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
@@ -65,13 +63,16 @@ class UserProfilePage extends StatelessWidget {
                   letterSpacing: -0.5,
                   size: TextSizes.h6,
                 ),
-                MyLabel(
-                  text: 'Edit',
-                  weight: FontWeight.w500,
-                  fontFamily: secondaryFont,
-                  color: theme.primary,
-                  letterSpacing: -0.5,
-                  size: TextSizes.b1,
+                InkWell(
+                  onTap: () {},
+                  child: MyLabel(
+                    text: 'Edit',
+                    weight: FontWeight.w500,
+                    fontFamily: secondaryFont,
+                    color: theme.primary,
+                    letterSpacing: -0.5,
+                    size: TextSizes.b1,
+                  ),
                 ),
               ],
             ),
@@ -82,9 +83,23 @@ class UserProfilePage extends StatelessWidget {
                 color: theme.onBackground.withOpacity(0.15),
                 borderRadius: BorderRadius.circular(globalContainerBorderRadius),
               ),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [],
+                children: [
+                  MyLabel(
+                    text: 'Dave Smith',
+                    weight: FontWeight.bold,
+                    size: TextSizes.b1,
+                  ),
+                  MyLabel(
+                    text: '946983663',
+                    size: TextSizes.b1,
+                  ),
+                  MyLabel(
+                    text: 'dsmith@yahoo.com',
+                    size: TextSizes.b1,
+                  ),
+                ],
               ),
             ),
           ],
