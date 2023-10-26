@@ -33,7 +33,7 @@ flutter:
   assets:
     - assets/images/
   
-#& Fonts
+#Custom Fonts
   fonts:
     - family: RedHat
       fonts:
