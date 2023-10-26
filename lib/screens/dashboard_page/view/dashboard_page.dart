@@ -7,7 +7,7 @@ import 'package:yu_health/custom_widgets/image_banner_card.dart';
 import 'package:yu_health/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
-import 'package:yu_health/custom_widgets/theme.dart';
+import 'package:yu_health/config/theme.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
-import 'package:yu_health/custom_widgets/theme.dart';
+import 'package:yu_health/config/theme.dart';
 
 double borderRadius = 15;
 double borderWidth = 1;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
-import 'package:yu_health/custom_widgets/theme.dart';
+import 'package:yu_health/config/theme.dart';
 
 const double fontSize = 16;
 const double borderRadius = 55;

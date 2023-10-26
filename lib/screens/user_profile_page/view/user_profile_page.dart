@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/config/ui_sizes.dart';
+import 'package:yu_health/custom_widgets/profile_field.dart';
 import 'package:yu_health/custom_widgets/profile_picture_large.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
-import 'package:yu_health/custom_widgets/text.dart';
-import 'package:yu_health/custom_widgets/theme.dart';
 
 const String imageURL =
     'https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1696291200&semt=ais';
@@ -40,7 +38,10 @@ class UserProfilePage extends StatelessWidget {
       backgroundColor: theme.background,
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: globalInnerScreenPaddingX, vertical: 15),
+          padding: const EdgeInsets.symmetric(
+            horizontal: globalInnerScreenPaddingX,
+            vertical: 15,
+          ),
           children: [
             //& Profile Picture with Edit button
             const Center(
@@ -53,55 +54,23 @@ class UserProfilePage extends StatelessWidget {
             ),
             //& User Information
             heightspace(30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                MyLabel(
-                  text: 'Personal Info',
-                  weight: FontWeight.w500,
-                  fontFamily: secondaryFont,
-                  letterSpacing: -0.5,
-                  size: TextSizes.h6,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: MyLabel(
-                    text: 'Edit',
-                    weight: FontWeight.w500,
-                    fontFamily: secondaryFont,
-                    color: theme.primary,
-                    letterSpacing: -0.5,
-                    size: TextSizes.b1,
-                  ),
-                ),
-              ],
+            const Divider(),
+            heightspace(10),
+            ProfileField(
+              onEdit: () => print('Edit Clicked!'),
+              value: 'Dave Smith',
             ),
             heightspace(10),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              decoration: BoxDecoration(
-                color: theme.onBackground.withOpacity(0.15),
-                borderRadius: BorderRadius.circular(globalContainerBorderRadius),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  MyLabel(
-                    text: 'Dave Smith',
-                    weight: FontWeight.bold,
-                    size: TextSizes.b1,
-                  ),
-                  MyLabel(
-                    text: '946983663',
-                    size: TextSizes.b1,
-                  ),
-                  MyLabel(
-                    text: 'dsmith@yahoo.com',
-                    size: TextSizes.b1,
-                  ),
-                ],
-              ),
+            ProfileField(
+              onEdit: () => print('Edit Clicked!'),
+              value: 'davesmith@yahoo.com',
             ),
+            heightspace(10),
+            ProfileField(
+              onEdit: () => print('Edit Clicked!'),
+              value: '9868656856',
+            ),
+            heightspace(10),
           ],
         ),
       ),
