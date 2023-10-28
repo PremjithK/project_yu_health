@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/config/theme.dart';
+import 'package:yu_health/custom_widgets/spacing.dart';
 
 class DoctorSearchResultCard extends StatelessWidget {
   const DoctorSearchResultCard({
@@ -29,7 +29,7 @@ class DoctorSearchResultCard extends StatelessWidget {
           onTap: onTap,
           child: Ink(
             decoration: BoxDecoration(
-              color: theme.onBackground.withOpacity(0.1),
+              color: theme.surfaceVariant.withOpacity(0.75),
               borderRadius: BorderRadius.circular(15),
             ),
             child: Column(

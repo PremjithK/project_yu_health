@@ -36,7 +36,7 @@ class LabSearchResult extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: theme.onBackground.withOpacity(0.1),
+          color: theme.surfaceVariant.withOpacity(0.75),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
