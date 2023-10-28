@@ -18,7 +18,7 @@ class UserProfilePage extends StatelessWidget {
       appBar: AppBar(
         titleSpacing: 20,
         automaticallyImplyLeading: false,
-        scrolledUnderElevation: 2,
+        scrolledUnderElevation: 0,
         title: Text(
           'My Profile',
           style: TextStyle(color: theme.onBackground),
@@ -54,19 +54,21 @@ class UserProfilePage extends StatelessWidget {
             ),
             //& User Information
             heightspace(30),
-            const Divider(),
-            heightspace(10),
+
             ProfileField(
+              title: 'Name',
               onEdit: () => print('Edit Clicked!'),
               value: 'Dave Smith',
             ),
             heightspace(10),
             ProfileField(
+              title: 'Email',
               onEdit: () => print('Edit Clicked!'),
               value: 'davesmith@yahoo.com',
             ),
             heightspace(10),
             ProfileField(
+              title: 'Phone Number',
               onEdit: () => print('Edit Clicked!'),
               value: '9868656856',
             ),
