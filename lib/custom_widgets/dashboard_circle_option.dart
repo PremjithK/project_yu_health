@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yu_health/config/text_sizes.dart';
-import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/config/theme.dart';
+import 'package:yu_health/custom_widgets/spacing.dart';
 
 class DashboardCircleOption extends StatefulWidget {
   const DashboardCircleOption({
@@ -59,7 +59,7 @@ class _DashboardCircleOptionState extends State<DashboardCircleOption> {
             widget.caption,
             style: TextStyle(
               fontSize: TextSizes.b3,
-              fontFamily: secondaryFont,
+              fontFamily: primaryFont,
               fontWeight: FontWeight.w600,
               color: theme.onPrimaryContainer,
               height: 1.1,

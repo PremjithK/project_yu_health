@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yu_health/config/alternateImages.dart';
+import 'package:yu_health/config/alternate_images.dart';
 import 'package:yu_health/custom_widgets/buttons.dart';
 
 class ProfilePictureLarge extends StatefulWidget {

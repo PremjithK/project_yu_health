@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/config/theme.dart';
 import 'package:yu_health/config/ui_sizes.dart';
@@ -8,6 +9,7 @@ import 'package:yu_health/custom_widgets/image_banner_card.dart';
 import 'package:yu_health/custom_widgets/profile_avatar_circle.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/custom_widgets/text.dart';
+import 'package:yu_health/screens/send_feedback_page/view/send_feedback_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -93,9 +95,9 @@ class _DashboardPageState extends State<DashboardPage> {
                   caption: 'Payment History',
                 ),
                 DashboardCircleOption(
-                  onTap: () {},
-                  icon: FontAwesomeIcons.kitMedical,
-                  caption: 'More Services',
+                  onTap: () => Get.to<Widget>(const SendFeedbackPage()),
+                  icon: FontAwesomeIcons.solidMessage,
+                  caption: 'Send Feedback',
                 ),
               ],
             ),

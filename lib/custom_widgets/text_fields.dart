@@ -127,6 +127,125 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
   }
 }
 
+//! MULTILINE TEXT FORM FIELD
+class MyMultilineTextFormField extends StatefulWidget {
+  const MyMultilineTextFormField({
+    super.key,
+    this.hint,
+    this.validator,
+    this.controller,
+    this.isPassword = false,
+    this.keyboardType,
+    this.enabled = true,
+    this.filled = false,
+    this.maxLines = 2,
+    //Event Properties
+    this.onChanged,
+  });
+
+  final String? hint;
+  final bool enabled;
+  final bool filled;
+  final FormFieldValidator<String>? validator;
+  final TextEditingController? controller;
+  final bool isPassword;
+  final TextInputType? keyboardType;
+  final int? maxLines;
+
+  //Event Functions Being Passed
+  final void Function(String)? onChanged;
+
+  //
+  @override
+  State<MyMultilineTextFormField> createState() => _MyMultilineTextFormFieldState();
+}
+
+class _MyMultilineTextFormFieldState extends State<MyMultilineTextFormField> {
+  @override
+  Widget build(BuildContext context) {
+    //! Theme
+    final theme = Theme.of(context).colorScheme;
+    return TextFormField(
+      // Config
+      key: widget.key,
+      controller: widget.controller,
+      validator: widget.validator,
+      obscureText: widget.isPassword,
+      keyboardType: widget.keyboardType,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      maxLines: widget.maxLines,
+      //Events
+      onChanged: widget.onChanged,
+
+      // INPUT TEXT STYLE
+      style: TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: fontSize,
+        fontFamily: primaryFont,
+        letterSpacing: 0.5,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+
+      //Decoration
+      decoration: InputDecoration(
+        enabled: widget.enabled,
+        //& Disabled Border
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius / 2),
+          borderSide: BorderSide(
+            color: theme.outline.withOpacity(0.3),
+          ),
+        ),
+        //& ERROR MESSAGE STYLE
+        errorStyle: TextStyle(
+          color: Theme.of(context).colorScheme.error,
+          fontSize: TextSizes.b3,
+          fontFamily: primaryFont,
+          fontWeight: FontWeight.w500,
+          letterSpacing: 0,
+        ),
+        filled: widget.filled,
+        fillColor: theme.surface,
+        // & Default Border
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius / 2),
+        ),
+        // & Enabled Border
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius / 2),
+          borderSide: BorderSide(color: theme.outline.withOpacity(0.5)),
+        ),
+        // & Focused Border
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius / 2),
+          borderSide: BorderSide(
+            color: theme.primary,
+          ),
+        ),
+        // LABEL STYLES
+        // HINT STYLES
+        labelText: widget.hint,
+        floatingLabelStyle: TextStyle(
+          fontSize: TextSizes.b1,
+          fontFamily: primaryFont,
+        ),
+        labelStyle: TextStyle(
+          fontFamily: primaryFont,
+          fontSize: fontSize,
+          fontWeight: FontWeight.w400,
+          color: Theme.of(context).colorScheme.onSurfaceVariant,
+        ),
+
+        // PREFIX_ICON STYLE
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: textFormFieldPadding * 2,
+          vertical: 10,
+        ),
+      ),
+    );
+  }
+}
+
 //! DATE PICKER
 class MyDateFormField extends StatefulWidget {
   const MyDateFormField({
@@ -189,13 +308,6 @@ class _MyDateFormFieldState extends State<MyDateFormField> {
       ),
       readOnly: true,
 
-      // Decoration
-      // inputFormatters: [
-      //   FilteringTextInputFormatter.singleLineFormatter,
-      //   FilteringTextInputFormatter.allow(
-      //     RegExp(r'^[1-9]'),
-      //   ),
-      // ],
       decoration: InputDecoration(
         enabled: widget.enabled,
         //& Disabled Border
