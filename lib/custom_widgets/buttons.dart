@@ -4,8 +4,8 @@ import 'package:yu_health/config/theme.dart';
 
 // Common features
 String font = primaryFont;
-double fontSize = 15;
-double elevatedButtonPadding = 12;
+double fontSize = 14;
+double elevatedButtonPadding = 8;
 double elev = 0;
 double borderWidth = 1;
 double mainBorderRadius = 60;
@@ -43,7 +43,7 @@ class MyTextButton extends StatelessWidget {
           color: Theme.of(context).colorScheme.primary,
           fontFamily: primaryFont,
           fontWeight: FontWeight.w600,
-          fontSize: TextSizes.b2,
+          fontSize: TextSizes.b3,
         ),
       ),
     );
@@ -66,7 +66,20 @@ class MyPrimaryButton extends StatelessWidget {
   // Customized Build Method
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: EdgeInsets.zero,
+      margin: EdgeInsets.zero,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(60),
+        color: Colors.transparent,
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.25),
+            blurRadius: 5,
+            offset: const Offset(-2, 2),
+          ),
+        ],
+      ),
       width: width,
       child: ElevatedButton(
         onPressed: onPressed,
@@ -109,7 +122,20 @@ class MySecondaryButton extends StatelessWidget {
   // Customized Build Method
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: EdgeInsets.zero,
+      margin: EdgeInsets.zero,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(60),
+        color: Colors.transparent,
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.onBackground.withOpacity(0.075),
+            blurRadius: 3,
+            offset: const Offset(-2, 1),
+          ),
+        ],
+      ),
       width: width,
       child: ElevatedButton(
         onPressed: onPressed,
@@ -152,24 +178,37 @@ class MyPrimaryButtonWithIcon extends StatelessWidget {
   final String label;
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: onPressed,
-      icon: icon,
-      label: Text(label),
-      style: TextButton.styleFrom(
-        disabledForegroundColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.75),
-        disabledBackgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.5),
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        textStyle: TextStyle(
-          fontFamily: font,
-          fontWeight: FontWeight.w800,
-          fontSize: fontSize,
-        ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        elevation: elev,
-        shape: RoundedRectangleBorder(
-          //side: BorderSide(color: Colors.transparent),
-          borderRadius: BorderRadius.circular(mainBorderRadius),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(60),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.15),
+            offset: const Offset(-2, 1),
+            blurRadius: 5,
+          ),
+        ],
+      ),
+      child: ElevatedButton.icon(
+        onPressed: onPressed,
+        icon: icon,
+        label: Text(label),
+        style: TextButton.styleFrom(
+          disabledForegroundColor: Theme.of(context).colorScheme.onPrimary.withOpacity(0.75),
+          disabledBackgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+          foregroundColor: Theme.of(context).colorScheme.onPrimary,
+          textStyle: TextStyle(
+            fontFamily: font,
+            fontWeight: FontWeight.w800,
+            fontSize: fontSize,
+          ),
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          elevation: elev,
+          shape: RoundedRectangleBorder(
+            //side: BorderSide(color: Colors.transparent),
+            borderRadius: BorderRadius.circular(mainBorderRadius),
+          ),
         ),
       ),
     );
@@ -190,24 +229,37 @@ class MySecondaryButtonWithIcon extends StatelessWidget {
   final String label;
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: onPressed,
-      icon: icon,
-      label: Text(label),
-      style: TextButton.styleFrom(
-        foregroundColor: Theme.of(context).colorScheme.onBackground,
-        textStyle: TextStyle(
-          fontFamily: font,
-          fontWeight: FontWeight.w800,
-          fontSize: fontSize,
-        ),
-        backgroundColor: Theme.of(context).colorScheme.background,
-        elevation: elev,
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: Theme.of(context).colorScheme.onBackground.withOpacity(0.25),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(60),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.onBackground.withOpacity(0.075),
+            blurRadius: 3,
+            offset: const Offset(-3, 2),
+          )
+        ],
+      ),
+      child: ElevatedButton.icon(
+        onPressed: onPressed,
+        icon: icon,
+        label: Text(label),
+        style: TextButton.styleFrom(
+          foregroundColor: Theme.of(context).colorScheme.onBackground,
+          textStyle: TextStyle(
+            fontFamily: font,
+            fontWeight: FontWeight.w800,
+            fontSize: fontSize,
           ),
-          borderRadius: BorderRadius.circular(mainBorderRadius),
+          backgroundColor: Theme.of(context).colorScheme.background,
+          elevation: elev,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.onBackground.withOpacity(0.25),
+            ),
+            borderRadius: BorderRadius.circular(mainBorderRadius),
+          ),
         ),
       ),
     );

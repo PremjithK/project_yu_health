@@ -89,7 +89,6 @@ class _SendFeedbackPageState extends State<SendFeedbackPage> {
                 ),
                 const Divider(),
                 heightspace(5),
-
                 // Builder for sent feedback list
               ],
             ),

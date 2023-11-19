@@ -113,6 +113,27 @@ AppBarTheme yuAppBarTheme = AppBarTheme(
   titleSpacing: 10,
 );
 
+InputDecorationTheme inputDecorationThemeLight = InputDecorationTheme(
+  prefixIconColor: MaterialStateColor.resolveWith((states) {
+    if (states.contains(MaterialState.focused)) {
+      return lightColorScheme.primary;
+    } else if (states.contains(MaterialState.error))
+      return lightColorScheme.error;
+    else
+      return lightColorScheme.onBackground.withOpacity(0.5);
+  }),
+);
+InputDecorationTheme inputDecorationThemeDark = InputDecorationTheme(
+  prefixIconColor: MaterialStateColor.resolveWith((states) {
+    if (states.contains(MaterialState.focused)) {
+      return darkColorScheme.primary;
+    } else if (states.contains(MaterialState.error))
+      return darkColorScheme.error;
+    else
+      return darkColorScheme.onBackground.withOpacity(0.5);
+  }),
+);
+
 //& Theme Data variables
 ThemeData darkTheme = ThemeData(
   useMaterial3: true,
@@ -120,6 +141,7 @@ ThemeData darkTheme = ThemeData(
   colorScheme: darkColorScheme,
   textTheme: myTextTheme,
   tooltipTheme: tooltipTheme,
+  inputDecorationTheme: inputDecorationThemeLight,
 );
 ThemeData lightTheme = ThemeData(
   useMaterial3: true,
@@ -127,4 +149,5 @@ ThemeData lightTheme = ThemeData(
   colorScheme: lightColorScheme,
   textTheme: myTextTheme,
   tooltipTheme: tooltipTheme,
+  inputDecorationTheme: inputDecorationThemeLight,
 );

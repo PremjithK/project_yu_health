@@ -3,9 +3,9 @@ import 'package:yu_health/config/text_sizes.dart';
 import 'package:yu_health/config/theme.dart';
 import 'package:yu_health/custom_widgets/spacing.dart';
 
-const double fontSize = 16;
+const double fontSize = 14;
 const double borderRadius = 55;
-const double textFormFieldPadding = 10;
+const double textFormFieldPadding = 5;
 
 class MyTextFormField extends StatefulWidget {
   const MyTextFormField({
@@ -153,7 +153,7 @@ class MyMultilineTextFormField extends StatefulWidget {
   final int? maxLines;
 
   //Event Functions Being Passed
-  final void Function(String)? onChanged;
+  final String? Function(String? value)? onChanged;
 
   //
   @override
@@ -238,7 +238,7 @@ class _MyMultilineTextFormFieldState extends State<MyMultilineTextFormField> {
 
         // PREFIX_ICON STYLE
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: textFormFieldPadding * 2,
+          horizontal: textFormFieldPadding,
           vertical: 10,
         ),
       ),

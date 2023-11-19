@@ -51,12 +51,12 @@ class ProfileField extends StatelessWidget {
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,  
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                 child: MyLabel(
                   text: value,
-                  color: theme.onPrimaryContainer.withOpacity(0.9),
+                  color: theme.onPrimaryContainer.withOpacity(0.75),
                   weight: FontWeight.w600,
                   fontFamily: primaryFont,
                   letterSpacing: -0.5,

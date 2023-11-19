@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yu_health/custom_widgets/spacing.dart';
 import 'package:yu_health/config/theme.dart';
+import 'package:yu_health/custom_widgets/spacing.dart';
 
 double borderRadius = 15;
 double borderWidth = 1;
@@ -11,10 +11,12 @@ class MySearchBar extends StatelessWidget {
     required this.onChanged,
     this.hint,
     super.key,
+    this.validator,
   });
 
   final TextEditingController controller;
   final void Function(String) onChanged;
+  final String? Function(String? value)? validator;
 
   final String? hint;
 
@@ -25,13 +27,6 @@ class MySearchBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: theme.onBackground.withOpacity(0.1),
-        //     blurRadius: 5,
-        //     spreadRadius: 2,
-        //   ),
-        // ],
       ),
       child: TextFormField(
         controller: controller,
@@ -43,7 +38,7 @@ class MySearchBar extends StatelessWidget {
           fontFamily: secondaryFont,
           fontWeight: FontWeight.w500,
           color: theme.onBackground,
-          fontSize: 15,
+          fontSize: 14,
           letterSpacing: 0,
         ),
 
@@ -51,7 +46,7 @@ class MySearchBar extends StatelessWidget {
           //Label Style
 
           hintStyle: TextStyle(
-            fontSize: 15,
+            fontSize: 14,
             color: theme.onBackground.withOpacity(0.3),
             height: 1,
           ),
@@ -59,7 +54,7 @@ class MySearchBar extends StatelessWidget {
           filled: true,
           fillColor: theme.background,
           hintText: hint,
-          contentPadding: const EdgeInsets.all(15),
+          contentPadding: const EdgeInsets.all(10),
 
           // Enabled Border
           enabledBorder: OutlineInputBorder(
